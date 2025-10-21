@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
@@ -13,15 +13,20 @@
       margin: 0;
     }
 
-    .content {
-      background-color: white;
-      border: 5px solid #00A0FF;
-      border-radius: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 25px 20px;
-      box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
-    }
+  .content {
+    background-color: white;
+    border: 5px solid #00A0FF;
+    border-radius: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px 20px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
+    margin-bottom: 50px; /* <-- Add this */
+  }
+    
+  .content:last-of-type {
+    margin-bottom: 0;
+  }
 
     h1 {
       color: #007ACC;
@@ -43,7 +48,7 @@
   </style>
 </head>
 <body>
-  <div class="content">
+  <div class="content" style="margin-bottom: 50px;">
     <h1>Merhaba!</h1>
     <p class="paragraph">
       Su, yaşamın devamı için en temel ihtiyaçlardan biridir. Tüm canlıların hayatta kalabilmesi, ekosistemlerin dengede kalması ve tarım, sanayi gibi birçok insan etkinliğinin sürdürülebilmesi suya bağlıdır. 
