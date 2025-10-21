@@ -1,75 +1,122 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Su Önemi</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: sans-serif;
-      background-color: #9CD7FF;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #9cd7ff;
       margin: 0;
       padding-top: 0;
+      color: #333;
     }
 
     .hero-background {
-      background-image: url('{{ url_for("static", filename="SuProjesi-Resim1.jpg") }}');
+      background-image: url('static/SuProjesi-Resim1.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       height: 400px;
       position: relative;
-    }
-
-    .hero-background .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.4);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       color: white;
-      font-size: 3rem;
-      font-weight: bold;
+    }
+
+    .hero-background .overlay {
+      background-color: rgba(0, 0, 0, 0.45);
+      padding: 20px 30px;
+      border-radius: 15px;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      max-width: 90%;
+      margin: 0 10px;
+      user-select: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     }
 
     .content {
       background-color: white;
-      border: 5px solid #00A0FF;
+      border: 5px solid #00a0ff;
       border-radius: 40px;
       max-width: 1200px;
-      margin: 0 auto 100px auto;
-      padding: 25px 20px;
+      margin: 40px auto 100px auto;
+      padding: 25px 30px;
       box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
+      line-height: 1.6;
     }
 
     .paragraph {
       font-size: 1.1em;
       color: #333;
-      line-height: 1.6;
       text-align: justify;
-    }
-
-    h1 {
-      color: #007ACC;
       margin-bottom: 20px;
     }
 
-    * {
-      box-sizing: border-box;
+    h1 {
+      color: #007acc;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #007acc;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      margin-top: 15px;
+      cursor: pointer;
+      user-select: none;
+      box-shadow: 0 4px 8px rgba(0, 122, 204, 0.4);
+    }
+
+    .btn:hover {
+      background-color: #005f99;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        padding: 20px 15px;
+        margin: 30px 20px 60px 20px;
+      }
+
+      .paragraph {
+        font-size: 1em;
+      }
+
+      .hero-background {
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-background {
+        height: 220px;
+      }
+
+      .hero-background .overlay {
+        font-size: 1.6rem;
+        padding: 15px 20px;
+      }
     }
   </style>
 </head>
 <body>
-  
   <div class="hero-background">
-    <div class="overlay">
-      Merhaba!
-    </div>
+    <div class="overlay">Merhaba!</div>
   </div>
 
   <div class="content">
@@ -80,11 +127,15 @@
       Ancak günümüzde su kaynakları hızla tükenmekte ve kirlenmektedir. Bu nedenle suyu tasarruflu kullanmak ve temiz tutmak, 
       hem bugünkü hem de gelecek nesiller için hayati önem taşımaktadır.
     </p>
+    <a href="#daha-fazla" class="btn">Daha Fazla Bilgi</a>
   </div>
 
-  <div class="content">
-    <p class="paragraph">Text 2 lalalalalallalala</p>
+  <div id="daha-fazla" class="content">
+    <p class="paragraph">
+      Su kaynaklarının korunması için bireysel ve toplumsal farkındalığın artırılması gerekmektedir. 
+      Suyu bilinçli kullanmak, sularımızı kirletmemek ve doğal döngüsünü korumak için herkes üzerine düşeni yapmalıdır. 
+      Bu sayede gelecek nesillere temiz ve yeterli su bırakabiliriz.
+    </p>
   </div>
-
 </body>
 </html>
