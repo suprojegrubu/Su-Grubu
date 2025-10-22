@@ -1,10 +1,15 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template('index.html')
 
-if __name__ == "__main__":
+@app.route('/button-click', methods=['POST'])
+def button_click():
+    print("Button was clicked!")
+    return "Button clicked!"
+
+if __name__ == '__main__':
     app.run(debug=True)
