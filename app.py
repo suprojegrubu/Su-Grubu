@@ -6,10 +6,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/button-click', methods=['POST'])
-def button_click():
+@app.route('/button1-click', methods=['POST'])
+def button1_click():
     print("Button was clicked!")
-    return "Button clicked!"
+    return render_template('page2.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
