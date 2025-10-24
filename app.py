@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/button1-click', methods=['POST'])
+@app.route('/moreabout', methods=['POST'])
 def moreabout():
     print("Button was clicked!")
     return render_template('page2.html')
