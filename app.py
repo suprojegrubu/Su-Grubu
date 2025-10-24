@@ -14,7 +14,7 @@ def siir():
 
 @app.route('/hikaye', methods=['POST'])
 def hikaye():
-    return render_template('page2.html')
+    return render_template('page3.html')
 
 if __name__ == '__main__':
     import os
