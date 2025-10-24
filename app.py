@@ -8,8 +8,12 @@ def index():
         return render_template('index.html')
     return render_template('index.html')
 
-@app.route('/moreabout', methods=['POST'])
-def moreabout():
+@app.route('/siir', methods=['POST'])
+def siir():
+    return render_template('page2.html')
+
+@app.route('/hikaye', methods=['POST'])
+def hikaye():
     return render_template('page2.html')
 
 if __name__ == '__main__':
