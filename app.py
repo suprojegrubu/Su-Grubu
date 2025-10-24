@@ -7,7 +7,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/button1-click', methods=['POST'])
-def button1_click():
+def moreabout():
     print("Button was clicked!")
     return render_template('page2.html')
 
