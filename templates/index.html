@@ -98,6 +98,29 @@
       background-color: #005f99;
     }
 
+    .side-image {
+      position: fixed;
+      top: 50%;
+      width: 120px;
+      height: auto;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .side-image.left {
+      left: 0;
+    }
+
+    .side-image.right {
+      right: 0;
+    }
+
+    @media (max-width: 768px) {
+      .side-image {
+        display: none;
+      }
+    }
+
     @media (max-width: 768px) {
       .content {
         padding: 20px 15px;
@@ -131,6 +154,9 @@
     <div class="overlay">Merhaba!</div>
   </div>
 
+  <img src="static/left-image.png" alt="Left Decoration" class="side-image left">
+  <img src="static/right-image.png" alt="Right Decoration" class="side-image right">  
+  
   <div class="content">
     <p class="paragraph">
       Su, yaşamın devamı için en temel ihtiyaçlardan biridir. Tüm canlıların hayatta kalabilmesi, ekosistemlerin dengede kalması ve tarım, sanayi gibi birçok insan etkinliğinin sürdürülebilmesi suya bağlıdır. 
