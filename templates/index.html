@@ -59,12 +59,15 @@
       background-color: white;
       border: 5px solid #00a0ff;
       border-radius: 40px;
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 40px auto;
-      padding: 25px 30px;
+      padding: 25px 40px;
       box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
       line-height: 1.6;
+      position: relative;
+      z-index: 2;
     }
+
 
     .paragraph {
       font-size: 1.1em;
@@ -99,12 +102,14 @@
     }
 
     .side-image {
-      position: static;
+      position: absolute;
       top: 50%;
-      width: 120px;
-      height: auto;
       transform: translateY(-50%);
-      z-index: 10;
+      width: auto;
+      height: 80vh;
+      z-index: 1;
+      object-fit: contain;
+      pointer-events: none;
     }
 
     .side-image.left {
@@ -115,11 +120,13 @@
       right: 0;
     }
 
+
     @media (max-width: 768px) {
-      .side-image {
-        display: none;
+        .side-image {
+         display: none;
       }
     }
+
 
     @media (max-width: 768px) {
       .content {
@@ -150,33 +157,30 @@
 </head>
 <body>
 
+<body>
+
+  <img src="static/SuProje-Resim1.avif" alt="Left Decoration" class="side-image left">
+  <img src="static/SuProjesi-Resim2.jpg" alt="Right Decoration" class="side-image right">
+
   <div class="hero-background">
     <div class="overlay">Merhaba!</div>
   </div>
-  
+
   <div class="content">
-    <img src="static/SuProje-Resim1.avif" alt="Left Decoration" class="side-image left">
-    <img src="static/SuProjesi-Resim2.jpg" alt="Right Decoration" class="side-image right">  
     <p class="paragraph">
-      Su, yaşamın devamı için en temel ihtiyaçlardan biridir. Tüm canlıların hayatta kalabilmesi, ekosistemlerin dengede kalması ve tarım, sanayi gibi birçok insan etkinliğinin sürdürülebilmesi suya bağlıdır. 
-      İnsan vücudunun büyük bir kısmı sudan oluşur ve su olmadan metabolik faaliyetler gerçekleşemez. 
-      Ayrıca su, bitkilerin büyümesi, enerji üretimi ve hijyenin sağlanması gibi alanlarda da kritik bir rol oynar. 
-      Ancak günümüzde su kaynakları hızla tükenmekte ve kirlenmektedir. Bu nedenle suyu tasarruflu kullanmak ve temiz tutmak, 
-      hem bugünkü hem de gelecek nesiller için hayati önem taşımaktadır.
+      Su, yaşamın devamı için en temel ihtiyaçlardan biridir...
     </p>
     <form action="/siir" method="post">
-        <button class="btn" type="submit">Su ile ilgili Şiire Git?</button>
+      <button class="btn" type="submit">Su ile ilgili Şiire Git?</button>
     </form>
     <form action="/hikaye" method="post">
-        <button class="btn" type="submit">Su ile ilgili Hikayeye Git?</button>
+      <button class="btn" type="submit">Su ile ilgili Hikayeye Git?</button>
     </form>
   </div>
 
   <div id="empty" class="content">
     <p class="paragraph">
-      Su kaynaklarının korunması için bireysel ve toplumsal farkındalığın artırılması gerekmektedir. 
-      Suyu bilinçli kullanmak, sularımızı kirletmemek ve doğal döngüsünü korumak için herkes üzerine düşeni yapmalıdır. 
-      Bu sayede gelecek nesillere temiz ve yeterli su bırakabiliriz.
+      Su kaynaklarının korunması için bireysel ve toplumsal farkındalığın artırılması gerekmektedir...
     </p>
   </div>
 
