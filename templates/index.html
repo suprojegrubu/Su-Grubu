@@ -88,33 +88,32 @@
       background-color: #005f99;
     }
 
+    .side-images-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap; 
+      margin-top: 20px;
+    }
+
     .side-image {
       width: 200px;
       height: 300px;
       border: 1px solid black;
-      position: absolute;
-      top: 50%;
-      
-      z-index: 1;
-    }
-
-    .side-image.left {
-      left: 20%;
-    }
-
-    .side-image.right {
-      right: 20%;
-    }
-
-    .side-image img {
-      width: 100%;
-      height: 100%;
       object-fit: cover;
+      flex-shrink: 0;
     }
 
     @media (max-width: 768px) {
+      .side-images-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
       .side-image {
-        display: none;
+        width: 150px;
+        height: 220px;
+        margin-bottom: 15px;
       }
 
       .content {
@@ -124,7 +123,7 @@
 
       .paragraph {
         font-size: 1em;
-      }  transform: translateY(-50%);
+      }
     }
 
     @media (max-width: 480px) {
@@ -157,13 +156,16 @@
       </form>
     </div>
 
-    <div id="empty" class="content">
+    <div class="content">
       <p class="paragraph">
         Su kaynaklarının korunması için bireysel ve toplumsal farkındalığın artırılması gerekmektedir...
       </p>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSdq4RRw67sfB514eEu9eYkpJb7WqIue4tVGNhIhNNnFJc7xPA/viewform?usp=dialog" class="btn">Ankete Giriniz?</a>
-        <img src="{{ url_for('static', filename='SuProje-Resim1.avif') }}" alt="Sol süsleme resmi" class="side-image left">
-        <img src="{{ url_for('static', filename='SuProjesi-Resim2.jpg') }}" alt="Sağ süsleme resmi" class="side-image right">
+
+      <div class="side-images-container">
+        <img src="{{ url_for('static', filename='SuProje-Resim1.avif') }}" alt="Sol süsleme resmi" class="side-image">
+        <img src="{{ url_for('static', filename='SuProjesi-Resim2.jpg') }}" alt="Sağ süsleme resmi" class="side-image">
+      </div>
     </div>
   </main>
 
