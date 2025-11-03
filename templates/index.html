@@ -92,7 +92,7 @@
       width: 200px;
       height: 300px;
       border: 1px solid black;
-      position: fixed;
+      position: absolute;
       top: 50%;
       transform: translateY(-50%);
       z-index: 1;
@@ -100,12 +100,10 @@
 
     .side-image.left {
       left: 50px;
-      bottom: 100px;
     }
 
     .side-image.right {
       right: 50px;
-      bottom: 100px;
     }
 
     .side-image img {
@@ -126,7 +124,7 @@
 
       .paragraph {
         font-size: 1em;
-      }
+      }  transform: translateY(-50%);
     }
 
     @media (max-width: 480px) {
