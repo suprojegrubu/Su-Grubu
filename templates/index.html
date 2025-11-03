@@ -13,17 +13,15 @@
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       background-color: #9cd7ff;
       margin: 0;
-      padding-top: 0;
       color: #333;
     }
 
     .hero-background {
-      background-image: url('static/SuProje-Resim1.avif');
+      background-image: url('{{ url_for("static", filename="SuProje-Resim1.avif") }}');
       background-repeat: repeat-x;
       background-size: auto 100%;
-      animation: scrollBackground 15s linear infinite; 
+      animation: scrollBackground 15s linear infinite;
       height: 400px;
-      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -31,15 +29,12 @@
       color: white;
       padding: 60px 20px;
       flex-direction: column;
+      position: relative;
     }
 
     @keyframes scrollBackground {
-      0% {
-        background-position: 0 0;
-      }
-      100% {
-        background-position: -100% 0;
-      }
+      0% { background-position: 0 0; }
+      100% { background-position: -100% 0; }
     }
 
     .hero-background .overlay {
@@ -48,11 +43,10 @@
       border-radius: 15px;
       font-size: clamp(1.8rem, 5vw, 3rem);
       font-weight: 700;
-      line-height: 1.2;
       max-width: 90%;
       margin-bottom: 30px;
-      user-select: none;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      user-select: none;
     }
 
     .content {
@@ -64,20 +58,13 @@
       padding: 25px 40px;
       box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
       line-height: 1.6;
-      position: relative;
       z-index: 2;
+      position: relative;
     }
-
 
     .paragraph {
       font-size: 1.1em;
-      color: #333;
       text-align: justify;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      color: #007acc;
       margin-bottom: 20px;
     }
 
@@ -92,9 +79,9 @@
       font-size: 1rem;
       transition: background-color 0.3s ease;
       margin-top: 15px;
+      box-shadow: 0 4px 8px rgba(0, 122, 204, 0.4);
       cursor: pointer;
       user-select: none;
-      box-shadow: 0 4px 8px rgba(0, 122, 204, 0.4);
     }
 
     .btn:hover {
@@ -105,7 +92,18 @@
       width: 200px;
       height: 300px;
       border: 1px solid black;
-      margin-bottom: 25px;
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    .side-image.left {
+      left: 10px;
+    }
+
+    .side-image.right {
+      right: 10px;
     }
 
     .side-image img {
@@ -114,34 +112,18 @@
       object-fit: cover;
     }
 
-    .side-image.left {
-      left: 0;
-    }
-
-    .side-image.right {
-      right: 0;
-    }
-
-
     @media (max-width: 768px) {
-        .side-image {
-         display: none;
+      .side-image {
+        display: none;
       }
-    }
 
-
-    @media (max-width: 768px) {
       .content {
         padding: 20px 15px;
-        margin: 30px 20px 60px 20px;
+        margin: 30px 20px;
       }
 
       .paragraph {
         font-size: 1em;
-      }
-
-      .hero-background {
-        padding: 40px 20px;
       }
     }
 
@@ -157,49 +139,45 @@
     }
   </style>
 </head>
-<body>
 
 <body>
-
-  <img src="static/SuProje-Resim1.avif" alt="Left Decoration" class="side-image left">
-  <img src="static/SuProjesi-Resim2.jpg" alt="Right Decoration" class="side-image right">
+  <img src="{{ url_for('static', filename='SuProje-Resim1.avif') }}" alt="Sol süsleme resmi" class="side-image left">
+  <img src="{{ url_for('static', filename='SuProjesi-Resim2.jpg') }}" alt="Sağ süsleme resmi" class="side-image right">
 
   <div class="hero-background">
     <div class="overlay">Merhaba!</div>
   </div>
 
-  <div class="content">
-    <p class="paragraph">
-      Su, yaşamın devamı için en temel ihtiyaçlardan biridir...
-    </p>
-    <form action="/siir" method="post">
-      <button class="btn" type="submit">Su ile ilgili Şiire Git?</button>
-    </form>
-    <form action="/hikaye" method="post">
-      <button class="btn" type="submit">Su ile ilgili Hikayeye Git?</button>
-    </form>
-  </div>
+  <main>
+    <div class="content">
+      <p class="paragraph">Su, yaşamın devamı için en temel ihtiyaçlardan biridir...</p>
+      <form action="/siir" method="post">
+        <button class="btn" type="submit">Su ile ilgili Şiire Git</button>
+      </form>
+      <form action="/hikaye" method="post">
+        <button class="btn" type="submit">Su ile ilgili Hikayeye Git</button>
+      </form>
+    </div>
 
-  <div id="empty" class="content">
-    <p class="paragraph">
-      Su kaynaklarının korunması için bireysel ve toplumsal farkındalığın artırılması gerekmektedir...
-    </p>
-  </div>
+    <div id="empty" class="content">
+      <p class="paragraph">
+        Su kaynaklarının korunması için bireysel ve toplumsal farkındalığın artırılması gerekmektedir...
+      </p>
+    </div>
+  </main>
 
-<audio id="bg-music" loop>
-  <source src="{{ url_for('static', filename='Calming Waves.mp3') }}" type="audio/mpeg">
-  Tarayıcınız ses öğesini desteklemiyor.
-</audio>
+  <audio id="bg-music" loop>
+    <source src="{{ url_for('static', filename='Calming Waves.mp3') }}" type="audio/mpeg">
+    Tarayıcınız ses öğesini desteklemiyor.
+  </audio>
 
-<script>
-  document.addEventListener("click", function playMusicOnce() {
-    const audio = document.getElementById("bg-music");
-    audio.volume = 0.6;
-    audio.play();
-    document.removeEventListener("click", playMusicOnce);
-  });
-</script>
-
-  
+  <script>
+    document.addEventListener("click", function playMusicOnce() {
+      const audio = document.getElementById("bg-music");
+      audio.volume = 0.6;
+      audio.play();
+      document.removeEventListener("click", playMusicOnce);
+    });
+  </script>
 </body>
 </html>
