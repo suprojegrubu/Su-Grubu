@@ -254,16 +254,17 @@
 
  <audio id="bop-sound" src="{{ url_for('static', filename='bop.mp3') }}" preload="auto"></audio>
 
-  <script>
-    document.addEventListener("click", function playMusicOnce() {
-    const bopSound = document.getElementById("bop-sound");
-    document.querySelectorAll(".btn").forEach(button => {
-      button.addEventListener("click", () => {
-        bopSound.currentTime = 0;
-        bopSound.volume = 0.7;
-        bopSound.play();
-      });
+<script>
+document.addEventListener("click", function playMusicOnce() {
+  const bopSound = document.getElementById("bop-sound");
+  document.querySelectorAll(".btn").forEach(button => {
+    button.addEventListener("click", () => {
+      bopSound.currentTime = 0;
+      bopSound.volume = 0.7;
+      bopSound.play();
     });
-  </script>
+  });
+});
+</script>
 </body>
 </html>
