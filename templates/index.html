@@ -252,17 +252,17 @@
     </p>
   </div>
 
-  <audio id="bg-music" loop>
-    <source src="{{ url_for('static', filename='Calming Waves.mp3') }}" type="audio/mpeg">
-    Tarayıcınız ses öğesini desteklemiyor.
-  </audio>
+ <audio id="bop-sound" src="{{ url_for('static', filename='bop.mp3') }}" preload="auto"></audio>
 
   <script>
     document.addEventListener("click", function playMusicOnce() {
-      const audio = document.getElementById("bg-music");
-      audio.volume = 0.6;
-      audio.play();
-      document.removeEventListener("click", playMusicOnce);
+    const bopSound = document.getElementById("bop-sound");
+    document.querySelectorAll(".btn").forEach(button => {
+      button.addEventListener("click", () => {
+        bopSound.currentTime = 0;
+        bopSound.volume = 0.7;
+        bopSound.play();
+      });
     });
   </script>
 </body>
