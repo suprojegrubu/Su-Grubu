@@ -16,6 +16,10 @@ def siir():
 def hikaye():
     return render_template('page3.html')
 
+@app.route('/kaynakca', methods=['POST'])
+def kaynakca():
+    return render_template('page4.html')
+
 if __name__ == '__main__':
     import os
     port = int(os.environ.get("PORT", 5000))
