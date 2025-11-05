@@ -78,23 +78,23 @@
     @keyframes contentanim2 {
       0% {
         transform: translateY(-200%);
-      }
-      25% {
-        transform: translateY(0%);
-      }
-      50% {
-        transform: translateY(50%);
+        opacity: 0;
       }
       60% {
-        transform: translateY(35%);
+        transform: translateY(30%);
+        opacity: 1;
       }
-      75% {
-        transform: translateY(0%);
+      80% {
+        transform: translateY(-10%);
+      }
+      90% {
+        transform: translateY(5%);
       }
       100% {
         transform: translateY(0%);
       }
     }
+
 
 
     .content-second {
@@ -118,7 +118,7 @@
       box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
       line-height: 1.6;
       position: relative;
-      animation: contentanim2 2s ease-in-out forwards;
+      animation: contentanim2 1.5s ease-out forwards;
       flex: 1;
     }
 
