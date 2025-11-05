@@ -69,8 +69,12 @@
       flex-shrink: 0;
     }
 
-    
-    .content {
+    @keyframes contentanim1 {
+      from { left: 200%; }
+      to { left: 0%; }
+    }
+
+    .content-second {
       background-color: white;
       border: 5px solid #00a0ff;
       border-radius: 40px;
@@ -79,10 +83,11 @@
       padding: 25px 40px;
       box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
       line-height: 1.6;
+      animation: contentanim1 2s forwards;
       position: relative;
     }
 
-    .content-second {
+    .content {
       background-color: white;
       border: 5px solid #00a0ff;
       border-radius: 40px;
@@ -92,11 +97,6 @@
       position: relative;
       animation: contentanim1 2s forwards;
       flex: 1;
-    }
-
-    @keyframes contentanim1 {
-      from { left: 200%; }
-      to { left: 0%; }
     }
 
     .paragraph {
