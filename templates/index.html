@@ -17,7 +17,24 @@
     }
 
     .main-img {
-      
+      background-color: white;
+      border: 5px solid #00a0ff;
+      border-radius: 40px;
+      padding: 25px 40px;
+      box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
+      margin: 40px auto;
+      max-width: 1000px;
+      text-align: center;
+      position: relative;
+      animation: contentanim2 0.5s ease-out forwards;
+    }
+
+    .main-img img {
+      width: 100%;
+      height: auto;
+      border-radius: 30px;
+      border: 3px solid #00a0ff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
     }
 
     .hero-background {
@@ -302,6 +319,12 @@
     </p>
     <br>
   </div>
+
+    <div class="main-img">
+      <img src="{{ url_for('static', filename='SuProje-Resim1.avif') }}" alt="Ana görsel" />
+      <p class="paragraph">Suyun doğadaki yolculuğunu anlatan bir görsel.</p>
+    </div>
+
     
    <div class="content-second">
     <h1>
