@@ -240,6 +240,25 @@
         padding: 15px 20px;
       }
     }
+
+    input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 2px solid #00a0ff;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+    .content-second form button {
+    display: block;
+    margin: 0 auto;
+    }
+
   </style>
 </head>
 
@@ -362,6 +381,16 @@
     </p>
     <br>
   </div>
+
+  <div class="content-second">
+  <h2>Katılımcı Formu</h2>
+  <form action="/apply" method="post">
+      <input type="text" name="name" placeholder="Adınız" required>
+      <input type="email" name="email" placeholder="E-posta" required>
+      <textarea name="message" placeholder="Mesajınız"></textarea>
+      <button type="submit" class="btn">Gönder</button>
+  </form>
+</div>
 
   
 </body>
