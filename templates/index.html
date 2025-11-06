@@ -16,6 +16,33 @@
       color: #333;
     }
 
+    
+    @keyframes contentanim1 {
+      from { left: 200%; }
+      to { left: 0%; }
+    }
+
+    
+    @keyframes contentanim2 {
+      0% {
+        transform: translateY(-200%);
+        opacity: 0;
+      }
+      60% {
+        transform: translateY(30%);
+        opacity: 1;
+      }
+      80% {
+        transform: translateY(-10%);
+      }
+      90% {
+        transform: translateY(5%);
+      }
+      100% {
+        transform: translateY(0%);
+      }
+    }
+
     .main-img {
       background-color: white;
       border: 5px solid #00a0ff;
@@ -23,10 +50,10 @@
       padding: 25px 40px;
       box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
       margin: 40px auto;
-      max-width: 1000px;
+      max-width: 500px;
       text-align: center;
       position: relative;
-      animation: contentanim2 0.5s ease-out forwards;
+      animation: contentanim1 4s ease-out forwards;
     }
 
     .main-img img {
@@ -35,6 +62,7 @@
       border-radius: 30px;
       border: 3px solid #00a0ff;
       box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      object-fit: cover;
     }
 
     .hero-background {
@@ -89,34 +117,6 @@
       height: auto;
       flex-shrink: 0;
     }
-
-    @keyframes contentanim1 {
-      from { left: 200%; }
-      to { left: 0%; }
-    }
-
-    
-    @keyframes contentanim2 {
-      0% {
-        transform: translateY(-200%);
-        opacity: 0;
-      }
-      60% {
-        transform: translateY(30%);
-        opacity: 1;
-      }
-      80% {
-        transform: translateY(-10%);
-      }
-      90% {
-        transform: translateY(5%);
-      }
-      100% {
-        transform: translateY(0%);
-      }
-    }
-
-
 
     .content-second {
       background-color: white;
