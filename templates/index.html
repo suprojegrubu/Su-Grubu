@@ -66,26 +66,29 @@
       object-fit: cover;
     }
 
-    .hero-background {
-      background-image: url('{{ url_for("static", filename="res3.png") }}');
-      background-repeat: repeat-x;
-      background-size: auto 100%;
-      animation: scrollBackground 60s linear infinite;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      padding: 60px 20px;
-      flex-direction: column;
-      position: relative;
-    }
+.hero-background {
+  background-image: url('{{ url_for("static", filename="res3.png") }}');
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: center bottom;
+  animation: scrollBackground 60s linear infinite;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 60px 20px;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden; 
 
-    @keyframes scrollBackground {
-      0% { background-position: 0 0; }
-      100% { background-position: -100% 0; }
-    }
+
+@keyframes scrollBackground {
+  0% { background-position: 0 0; }
+  100% { background-position: -1000px 0; }
+}
+
 
     .hero-background .overlay {
       background-color: rgba(0, 0, 0, 0.45);
@@ -240,6 +243,13 @@
         padding: 15px 20px;
       }
     }
+
+  @media (max-width: 600px) {
+    .hero-background {
+      height: 250px;
+      background-size: cover; 
+    }
+  }
 
     input, textarea {
     width: 100%;
