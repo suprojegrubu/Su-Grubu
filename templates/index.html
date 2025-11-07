@@ -15,7 +15,18 @@
       background-color: #9cd7ff;
       margin: 0;
       color: #333;
-      overflow: hidden; 
+      overflow-x: hidden; 
+    }
+
+    #drip-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; 
+      overflow: hidden;
+      z-index: 1; 
     }
 
     .drop {
@@ -25,6 +36,7 @@
       background: #FFF;
       border-radius: 50%;
       animation: drip 2s cubic-bezier(1, 0, .91, .19) infinite;
+      opacity: 0.9;
     }
 
     .drop::before {
@@ -41,38 +53,14 @@
 
     @keyframes drip {
       0% {
-        top: -50px;
+        top: -60px;
         opacity: 1;
       }
-      90% {
+      95% {
         opacity: 1;
       }
       100% {
         top: 100vh;
-        opacity: 0;
-      }
-    }
-
-    .wave {
-      position: absolute;
-      opacity: 0;
-      top: 100vh;
-      width: 2px;
-      height: 1px;
-      border: #FFF 7px solid;
-      border-radius: 300px / 150px;
-      animation: ripple 2s infinite;
-    }
-
-    @keyframes ripple {
-      from {
-        opacity: 1;
-      }
-      to {
-        width: 600px;
-        height: 300px;
-        border-width: 1px;
-        top: calc(100vh - 100px);
         opacity: 0;
       }
     }
@@ -83,23 +71,11 @@
     }
 
     @keyframes contentanim2 {
-      0% {
-        transform: translateY(-200%);
-        opacity: 0;
-      }
-      60% {
-        transform: translateY(30%);
-        opacity: 1;
-      }
-      80% {
-        transform: translateY(-10%);
-      }
-      90% {
-        transform: translateY(5%);
-      }
-      100% {
-        transform: translateY(0%);
-      }
+      0% { transform: translateY(-200%); opacity: 0; }
+      60% { transform: translateY(30%); opacity: 1; }
+      80% { transform: translateY(-10%); }
+      90% { transform: translateY(5%); }
+      100% { transform: translateY(0%); }
     }
 
     .main-img {
@@ -114,6 +90,7 @@
       text-align: center;
       position: relative;
       animation: contentanim1 4s ease-out forwards;
+      z-index: 2;
     }
 
     .main-img img {
@@ -141,6 +118,7 @@
       flex-direction: column;
       position: relative;
       overflow: hidden; 
+      z-index: 2;
     }
 
     @keyframes scrollBackground {
@@ -168,6 +146,8 @@
       margin: 40px auto;
       max-width: 2000px;
       padding: 0 20px;
+      z-index: 2;
+      position: relative;
     }
 
     .side-image {
@@ -187,6 +167,7 @@
       box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
       line-height: 1.6;
       position: relative;
+      z-index: 2;
     }
 
     .content-second {
@@ -306,12 +287,10 @@
       min-height: 100px;
       resize: vertical;
     }
-
   </style>
 </head>
 
 <body>
-
   <div id="drip-container"></div>
 
   <div class="hero-background">
@@ -354,34 +333,100 @@
     </form>
   </div>
 
+  <div class="content-second">
+    <h1>Türkiye’de Kuraklık Tehdidi: Su Kaynakları Azalıyor.</h1>
+    <p class="paragraph">
+      Türkiye’de yağış rejimlerindeki değişim, artan sıcaklıklar ve su kaynaklarının azalması ciddi bir kuraklık riskini beraberinde getiriyor.
+      Küresel iklim değişikliği, Türkiye’nin yarı kurak iklim yapısını daha da kırılgan hale getirirken, artan su talebi ve yanlış su yönetimi sorunu derinleştiriyor.
+      Yağış miktarlarının azalması, yeraltı su seviyelerinin düşmesine ve su kıtlığı tehdidinin artmasına neden oluyor.
+      Kuraklık riski yalnız içme sularını değil, hidro enerji üretimi ile tarım ve hayvancılıkta kullanılan su stoğunu da tehlikeye atıyor.
+    </p>
+    <h1>Azalan Yağışlar ve Su Kaynaklarının Durumu</h1>
+    <p class="paragraph">
+      Meteoroloji Genel Müdürlüğü’nün (MGM) Şubat 2025’te yayımladığı alansal yağış raporuna göre, son yıllarda yağışlarda önemli bir düşüş yaşandı. 
+      Yağışlarda Türkiye genelinde normale göre %33;
+      İç Anadolunun batısı, Güneydoğu Anadolu ve Ege bölgelerinde ise %60’tan fazla azalma gözlemlendi. 
+    </p>
+    <p class="paragraph">
+      Azalan yağışlar baraj stoklarını da olumsuz etkiliyor. Greenpeace’in raporuna göre, Türkiye’de 2023 sonu itibarıyla baraj doluluk oranları kritik seviyelere inmiş durumda. 
+      İstanbul, Ankara ve İzmir gibi büyük şehirlerde su rezervleri önceki yıllara göre önemli ölçüde azalırken Türkiye’nin yıllık kişi başına düşen su miktarı ise 1.300 metreküp seviyesine geriledi.
+      Çeşitli endeks verileri; kişi başına 1.700 metreküp su sıkıntısının olmadığını, 1.000-1.700 metreküp su stresini, 500-1.000 metreküp su kıtlığını ve 500 metreküp altının mutlak su kıtlığı olduğunu gösteriyor. 
+      Dolayısıyla Türkiye su stresi içindeki ülkeler arasında yer alıyor.
+    </p>
+    <p class="paragraph">
+      Tarım ve Orman Bakanlığı’nın Kuraklık Yönetimi Raporu’na göre;
+      nüfus artışı ve su tüketimindeki plansız büyüme devam ederse, Türkiye 2030 yılı itibariyle kişi başına düşen su miktarının 1.000 metreküpün altına inerek 2070 yılına kadar su kıtlığı seviyesine gerilemesi muhtemel. 
+      Uzmanlar su yönetiminde acil önlemler alınmazsa, Türkiye’nin gelecekte daha ciddi su krizleriyle karşılaşabileceği konusunda uyarıyor.
+    </p>
+  </div>
 
-  
+  <div class="main-img">
+    <img src="{{ url_for('static', filename='SuProje-Resim1.avif') }}" alt="Ana görsel" />
+  </div>
+
+  <div class="content-second">
+    <h1>İklim değişikliği gölgesinde su krizi: Türkiye'de kuraklık riski nasıl önlenebilir?</h1>
+    <p class="paragraph">
+      Türkiye Su Enstitüsü Politika Geliştirme Koordinatörü Dr. Tuğba Evrim Maden, iklim değişikliğinin su kaynaklarına çok boyutlu etkilerini ve neler yapılması gerektiğini AA Analiz için kaleme aldı.
+    </p>
+    <p class="paragraph">
+      İklim değişikliğinin etkilerinin çoğunlukla sıcaklık artışıyla ilişkilendirildiği görülse de en belirgin yansımaların su döngüsü üzerinden hissedildiği ortaya konmaktadır.
+      Yağışların düzensizleşmesi, uzun süreli kuraklıkların yaşanması, ani ve şiddetli sel olaylarının meydana gelmesi, yeraltı sularının giderek azalması ve su kalitesinde bozulmalar bu krizin doğrudan sonuçları arasında gösterilmektedir.
+      Bu nedenle, Birleşmiş Milletler (BM-Su-UN-Water) başta olmak üzere uluslararası kurumlar tarafından iklim değişikliği bir su krizi olarak tanımlanmaktadır.
+    </p>
+    <h1>İklim değişikliğinin suya etkisi nedir?</h1>
+    <p class="paragraph">
+      Hükümetlerarası İklim Değişikliği Paneli (IPCC) raporlarında, küçük sıcaklık artışlarının dahi su döngüsünde ciddi bozulmalara yol açabildiği belirtilmektedir.
+      Türkiye, Akdeniz iklim kuşağında yer aldığı için bu etkilerden doğrudan etkilenmektedir.
+      Akdeniz havzasının küresel ortalamadan yüzde 20 daha hızlı ısındığı, yağışlarda belirgin azalmaların görüldüğü ve kuraklıkların sıklaştığı ortaya konmuştur.
+      Türkiye'nin yıllık kişi başına düşen su miktarının yaklaşık bin 300 metreküp olduğu hesaplanmakta ve bu değer ülkemizi Falkenmark indeksine göre 'su stresi yaşayan ülkeler" kategorisine sokmaktadır.
+      Projeksiyonlara göre, yüzyılın sonuna kadar su potansiyelimizde yüzde 25'lik bir azalma yaşanabilecektir.
+    </p>
+    <p class="paragraph">
+      Birleşmiş Milletler Çölleşme ile Mücadele Sözleşmesi (UNCCD) tarafından hazırlanan Drought Hotspots raporunda Türkiye topraklarının yüzde 88'inin çölleşme riski altında olduğu belirtilmektedir.
+      Yüzyılın sonuna kadar yağışlarda yüzde 30'luk bir azalma, kıyı bölgelerinde sıcaklıklarda 4-5 derece, iç bölgelerde ise 5-6 derecelik artış beklenmektedir.
+    </p>
+    <p class="paragraph">
+      2022'nin kurak geçmesinin ardından, 2023 yılında Karadeniz dışındaki tüm bölgeler kuraklık koşullarından etkilenmiştir.
+      En fazla zarar Ege, İç Anadolu, Güneydoğu Anadolu, Akdeniz ve Trakya bölgelerinde kaydedilmiştir.
+      Meteoroloji Genel Müdürlüğünün 2024-2025 su yılı verilerine göre Türkiye, 10 aylık dönemde uzun yıllar yağış ortalamasının yüzde 26 altında kalan ve 52 yılın en düşük seviyesine inen yağış değerleriyle ciddi bir meteorolojik kuraklık yaşamıştır.
+      Özellikle Güneydoğu Anadolu ve İç Anadolu bölgelerinde yağış oranındaki azalmalar yüzde 60'a yakın, Marmara ve Ege'de de 18 yıllık dönemin en düşük seviyelerine ulaşmıştır.
+    </p>
+    <p class="paragraph">
+      Su potansiyelindeki azalma, artan sıcaklıklarla birlikte buharlaşmanın da yükselmesine neden olmaktadır.
+      Yeraltı su seviyelerinin 50 metreye kadar düştüğü, barajlardaki doluluk oranlarının azaldığı, göllerin kuruduğu, su kalitesinin bozulduğu ve ekosistemlerin zarar gördüğü görülmektedir.
+    </p>
+    <h1>Türkiye'de su krizi riski nasıl önlenebilir?</h1>
+    <p class="paragraph">
+      Türkiye'nin su varlıklarının sürdürülebilir yönetimi için kısa, orta ve uzun vadeli bütüncül politikaların geliştirilmesi gerekmektedir.
+      İklim değişikliğinin su kaynaklarına etkilerinin azaltılması ve uyumun sağlanması için hem arz hem de talep yönlü tedbirlerin birlikte ele alınması önem taşımaktadır.
+      Arz yönlü tedbirler kapsamında, baraj ve göletlerin yanında, doğa temelli çözümlerle suyun yerinde depolanmasını, yeraltı suyu beslenimini artıracak ormanlaştırma, mera ve sulak alan restorasyonlarının artırılması gerekmektedir.
+    </p>
+    <p class="paragraph">
+      Tarımda suyun yüzde 70'ten fazlasının tüketildiği dikkate alındığında, en fazla tasarruf potansiyelinin de bu sektörde olduğu görülmektedir.
+      Bu bağlamda, sulama verimliliğini artıracak modern sulama sistemlerine geçişin yaygınlaştırılması, su tüketimi düşük ürün desenlerinin planlanması, çiftçilerin su tasarrufu konusunda bilinçlendirilmesi büyük önem taşımaktadır.
+    </p>
+    <p class="paragraph">
+      Kentlerde su kayıp ve kaçak oranlarının azaltılması, gri su sistemlerinin ve yağmur suyu hasadının teşvik edilmesi, bireysel su tüketiminin azaltılmasına yönelik farkındalık çalışmalarının artırılması gerekmektedir.
+    </p>
+    <p class="paragraph">
+      Ayrıca, iklim değişikliğinin etkileri doğrultusunda ulusal ölçekte entegre su kaynakları yönetimi politikalarının geliştirilmesi, havza bazlı planlamaların etkin şekilde uygulanması ve su yönetiminde kurumlar arası koordinasyonun güçlendirilmesi, uzun vadede su güvenliği açısından kritik öneme sahiptir.
+    </p>
+  </div>
+
   <script>
     const container = document.getElementById('drip-container');
-    const numDrops = 10; 
-
-    function createDrop() {
+    const numDrops = 20; 
+    for (let i = 0; i < numDrops; i++) {
       const drop = document.createElement('div');
       drop.classList.add('drop');
-      drop.style.left = Math.random() * window.innerWidth + 'px';
-      drop.style.animationDuration = (1.5 + Math.random() * 1.5) + 's';
-      drop.style.animationDelay = Math.random() * 2 + 's';
-
-      drop.addEventListener('animationend', () => {
-        drop.remove();
-        createDrop(); 
-      });
-
+      drop.style.left = Math.random() * 100 + 'vw';
+      drop.style.animationDuration = 2 + Math.random() * 3 + 's';
+      drop.style.animationDelay = Math.random() * 5 + 's';
+      drop.style.transform = `scale(${0.5 + Math.random()})`;
       container.appendChild(drop);
     }
-
-    for (let i = 0; i < numDrops; i++) {
-      createDrop();
-    }
-    window.addEventListener('resize', () => {
-      container.innerHTML = '';
-      for (let i = 0; i < numDrops; i++) createDrop();
-    });
   </script>
+
 </body>
 </html>
