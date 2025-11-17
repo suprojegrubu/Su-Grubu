@@ -136,25 +136,23 @@ a.repeat:hover {
   }
 }
 	  
-.five span {
-	color: #dd3f0f;
+.four span {
+	color: #8d6a00;
 	opacity: 0;
 	transform: translate(0, -100px) rotate(360deg) scale(0);
-	animation: dropVanish .5s forwards;
+	animation: revolveDrop .3s forwards;
 }
 
-@keyframes dropVanish {
+
+@keyframes revolveDrop {
 	30% {
 		transform: translate(0, -50px) rotate(180deg) scale(1);
 	}
-	50% {
+
+	60% {
 		transform: translate(0, 20px) scale(.8) rotate(0deg);
-		opacity: 1;
 	}
-	80% {
-		transform: translate(-100px, -100px) scale(1.5) rotate(-180deg);
-		opacity: 0;
-	}
+
 	100% {
 		transform: translate(0) scale(1) rotate(0deg);
 		opacity: 1;
@@ -167,12 +165,12 @@ a.repeat:hover {
   <div class="content">
 
     <div class="paragraph">
-      <div class="animate five">
-        <span>c</span><span>s</span><span>s</span><span>3</span> &nbsp;
-        <span>a</span><span>n</span><span>i</span><span>m</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span><span>s</span>
-
-        <a class="repeat" href="javascript:void(0);">Repeat Animation</a>
-      </div>
+ 		<div class="animate four">
+			<span>c</span><span>s</span><span>s</span><span>3</span> &nbsp;
+			<span>a</span><span>n</span><span>i</span><span>m</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span><span>s</span>
+      
+     		 <a class="repeat" href="javascript:void(0);">Repeat Animation</a>
+		</div>
     </div>
 
     <form action="/" method="post">
