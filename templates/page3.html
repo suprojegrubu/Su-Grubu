@@ -71,18 +71,69 @@
         font-size: 1em;
       }
     }
+
+  .five span {
+	  color: #dd3f0f;
+	  opacity: 0;
+	  transform: translate(0, -100px) rotate(360deg) scale(0);
+	  animation: dropVanish .5s forwards;
+  }
+
+
+  @keyframes dropVanish {
+	  30% {
+		  transform: translate(0, -50px) rotate(180deg) scale(1);
+	  }
+
+	  50% {
+		  transform: translate(0, 20px) scale(.8) rotate(0deg);
+		  opacity: 1;
+	  }
+
+	  80% {
+		  transform: translate(-100px, -100px) scale(1.5) rotate(-180deg);
+		  opacity: 0;
+	  }
+  
+	  100% {
+		  transform: translate(0) scale(1) rotate(0deg);
+	  	opacity: 1;
+  	}
+  }
+
+    
   </style>
 </head>
 <body>
 
   <div class="content">
     <p class="paragraph">
+		<div class="animate five">
+			<span>c</span><span>s</span><span>s</span><span>3</span> &nbsp;
+			<span>a</span><span>n</span><span>i</span><span>m</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span><span>s</span>
+      
+      <a class="repeat" href="javascript:void(0);">Repeat Animation</a>
+		</div>
     </p>
     
     <form action="/" method="post">
         <button class="btn"type="submit">Geri Dön?</button>
     </form>
   </div>
+
+ <script>
+   $(function(){
+	  $('.repeat').click(function(){
+    	  var classes =  $(this).parent().attr('class');
+          $(this).parent().attr('class', 'animate');
+          var indicator = $(this);
+          setTimeout(function(){ 
+        	  $(indicator).parent().addClass(classes);
+          }, 20);
+      });
+    });
+ </script>
+
 
 </body>
 </html>
