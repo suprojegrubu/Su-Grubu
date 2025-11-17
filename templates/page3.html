@@ -31,14 +31,6 @@
 	padding: 0 0 200px;
 }
 
-a, a:link, a:visited {
-  text-decoration: none;
-  padding: 9px 15px;
-  border: 1px solid #ececec;
-  border-radius: 5px;
-  color: gray;
-}
-
 .animate {
 	font-size: 50px;
 	margin: 100px 0 0;
@@ -68,25 +60,8 @@ a.repeat:hover {
   color: white;
 }
 
-.animate span:nth-of-type(2) { animation-delay: .05s; }
-.animate span:nth-of-type(3) { animation-delay: .1s; }
-.animate span:nth-of-type(4) { animation-delay: .15s; }
-.animate span:nth-of-type(5) { animation-delay: .2s; }
-.animate span:nth-of-type(6) { animation-delay: .25s; }
-.animate span:nth-of-type(7) { animation-delay: .3s; }
-.animate span:nth-of-type(8) { animation-delay: .35s; }
-.animate span:nth-of-type(9) { animation-delay: .4s; }
-.animate span:nth-of-type(10) { animation-delay: .45s; }
-.animate span:nth-of-type(11) { animation-delay: .5s; }
-.animate span:nth-of-type(12) { animation-delay: .55s; }
-.animate span:nth-of-type(13) { animation-delay: .6s; }
-.animate span:nth-of-type(14) { animation-delay: .65s; }
-.animate span:nth-of-type(15) { animation-delay: .7s; }
-.animate span:nth-of-type(16) { animation-delay: .75s; }
-.animate span:nth-of-type(17) { animation-delay: .8s; }
-.animate span:nth-of-type(18) { animation-delay: .85s; }
-.animate span:nth-of-type(19) { animation-delay: .9s; }
-.animate span:nth-of-type(20) { animation-delay: .95s; }
+.animate span:nth-of-type(1) { animation-delay: .5s; }
+.animate span:nth-of-type(2) { animation-delay: 1s; }
 
 .content {
   background-color: white;
@@ -166,10 +141,8 @@ a.repeat:hover {
 
     <div class="paragraph">
  		<div class="animate four">
-			<span>c</span><span>s</span><span>s</span><span>3</span> &nbsp;
-			<span>a</span><span>n</span><span>i</span><span>m</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span><span>s</span>
-      
-     		 <a class="repeat" href="javascript:void(0);">Repeat Animation</a>
+			<span>Selamün Aleyküm</span> &nbsp;
+			<span>Merhaba</span>
 		</div>
     </div>
 
@@ -178,22 +151,6 @@ a.repeat:hover {
     </form>
 
   </div>
-
-<script>
-$(function() {
-  $('.repeat').click(function() {
-
-    let block = $(this).parent();
-    let originalClasses = block.attr('class');
-
-    block.attr('class', 'animate');
-
-    setTimeout(function() {
-      block.addClass(originalClasses);
-    }, 20);
-  });
-});
-</script>
 
 </body>
 </html>
