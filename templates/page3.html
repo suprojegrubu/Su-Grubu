@@ -4,136 +4,198 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Su ile İlgili Hikaye</title>
+	
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <style>
-    * {
-      box-sizing: border-box;
-    }
+* {
+	margin: 0;
+	padding: 0;
+ }
 
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #9cd7ff;
-      margin: 0;
-      padding-top: 0;
-      color: #333;
-    }
+ body {
+	font-family: 'Lato', sans-serif;
+	font-size: 14px;
+	color: #999;
+	word-wrap: break-word;
+ }
 
-    .content {
-      background-color: white;
-      border: 5px solid #00a0ff;
-      border-radius: 40px;
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 25px 30px;
-      box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
-      line-height: 1.6;
-    }
+.container {
+	width: 100%;
+	margin: auto;
+	font-weight: 900;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 0 0 200px;
+}
 
-    .paragraph {
-      font-size: 1.1em;
-      color: #333;
-      text-align: justify;
-      margin-bottom: 20px;
-    }
+a, a:link, a:visited {
+  text-decoration: none;
+  padding: 9px 15px;
+  border: 1px solid #ececec;
+  border-radius: 5px;
+  color: gray;
+}
 
-    h1 {
-      color: #007acc;
-      margin-bottom: 20px;
-    }
-    .btn {
-      display: inline-block;
-      background-color: #007acc;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      box-shadow: 0 4px 8px rgba(0, 122, 204, 0.4);
-      cursor: pointer;
-      user-select: none;
-      
-      transition: transform 0.4s ease, background-color 0.3s ease;
-      transform: scale(1);
-    }
+.animate {
+	font-size: 50px;
+	margin: 100px 0 0;
+	border-bottom: 2px solid #ccc;
+}
 
-    .btn:hover {
-      transform: scale(1.2);
-      background-color: #005f99;
-    }
+.animate span {
+	display: inline-block;
+}
 
-    @media (max-width: 768px) {
-      .content {
-        padding: 20px 15px;
-        margin: 30px 20px 60px 20px;
-      }
+a.repeat {
+  display: inline-block;
+  font-size: 12px;
+  text-transform: none;
+  color: orange;
+  padding: 5px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  font-weight: normal;
+  margin-left: 50px;
+  border-radius: 3px;
+  position: relative;
+  bottom: 15px;
+}
 
-      .paragraph {
-        font-size: 1em;
-      }
-    }
+a.repeat:hover {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+}
 
-  .five span {
-	  color: #dd3f0f;
-	  opacity: 0;
-	  transform: translate(0, -100px) rotate(360deg) scale(0);
-	  animation: dropVanish .5s forwards;
+.animate span:nth-of-type(2) { animation-delay: .05s; }
+.animate span:nth-of-type(3) { animation-delay: .1s; }
+.animate span:nth-of-type(4) { animation-delay: .15s; }
+.animate span:nth-of-type(5) { animation-delay: .2s; }
+.animate span:nth-of-type(6) { animation-delay: .25s; }
+.animate span:nth-of-type(7) { animation-delay: .3s; }
+.animate span:nth-of-type(8) { animation-delay: .35s; }
+.animate span:nth-of-type(9) { animation-delay: .4s; }
+.animate span:nth-of-type(10) { animation-delay: .45s; }
+.animate span:nth-of-type(11) { animation-delay: .5s; }
+.animate span:nth-of-type(12) { animation-delay: .55s; }
+.animate span:nth-of-type(13) { animation-delay: .6s; }
+.animate span:nth-of-type(14) { animation-delay: .65s; }
+.animate span:nth-of-type(15) { animation-delay: .7s; }
+.animate span:nth-of-type(16) { animation-delay: .75s; }
+.animate span:nth-of-type(17) { animation-delay: .8s; }
+.animate span:nth-of-type(18) { animation-delay: .85s; }
+.animate span:nth-of-type(19) { animation-delay: .9s; }
+.animate span:nth-of-type(20) { animation-delay: .95s; }
+
+.content {
+  background-color: white;
+  border: 5px solid #00a0ff;
+  border-radius: 40px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
+  line-height: 1.6;
+}
+
+.paragraph {
+  font-size: 1.1em;
+  color: #333;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #007acc;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 122, 204, 0.4);
+  cursor: pointer;
+  transition: transform 0.4s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.2);
+  background-color: #005f99;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 20px 15px;
+    margin: 30px 20px 60px 20px;
   }
 
-
-  @keyframes dropVanish {
-	  30% {
-		  transform: translate(0, -50px) rotate(180deg) scale(1);
-	  }
-
-	  50% {
-		  transform: translate(0, 20px) scale(.8) rotate(0deg);
-		  opacity: 1;
-	  }
-
-	  80% {
-		  transform: translate(-100px, -100px) scale(1.5) rotate(-180deg);
-		  opacity: 0;
-	  }
-  
-	  100% {
-		  transform: translate(0) scale(1) rotate(0deg);
-	  	opacity: 1;
-  	}
+  .paragraph {
+    font-size: 1em;
   }
+}
+	  
+.five span {
+	color: #dd3f0f;
+	opacity: 0;
+	transform: translate(0, -100px) rotate(360deg) scale(0);
+	animation: dropVanish .5s forwards;
+}
 
-    
+@keyframes dropVanish {
+	30% {
+		transform: translate(0, -50px) rotate(180deg) scale(1);
+	}
+	50% {
+		transform: translate(0, 20px) scale(.8) rotate(0deg);
+		opacity: 1;
+	}
+	80% {
+		transform: translate(-100px, -100px) scale(1.5) rotate(-180deg);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(0) scale(1) rotate(0deg);
+		opacity: 1;
+	}
+}
   </style>
 </head>
 <body>
 
   <div class="content">
-    <p class="paragraph">
-		<div class="animate five">
-			<span>c</span><span>s</span><span>s</span><span>3</span> &nbsp;
-			<span>a</span><span>n</span><span>i</span><span>m</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span><span>s</span>
-      
-      <a class="repeat" href="javascript:void(0);">Repeat Animation</a>
-		</div>
-    </p>
-    
+
+    <div class="paragraph">
+      <div class="animate five">
+        <span>c</span><span>s</span><span>s</span><span>3</span> &nbsp;
+        <span>a</span><span>n</span><span>i</span><span>m</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span><span>s</span>
+
+        <a class="repeat" href="javascript:void(0);">Repeat Animation</a>
+      </div>
+    </div>
+
     <form action="/" method="post">
-        <button class="btn"type="submit">Geri Dön?</button>
+        <button class="btn" type="submit">Geri Dön?</button>
     </form>
+
   </div>
 
- <script>
-   $(function(){
-	  $('.repeat').click(function(){
-    	  var classes =  $(this).parent().attr('class');
-          $(this).parent().attr('class', 'animate');
-          var indicator = $(this);
-          setTimeout(function(){ 
-        	  $(indicator).parent().addClass(classes);
-          }, 20);
-      });
-    });
- </script>
+<script>
+$(function() {
+  $('.repeat').click(function() {
 
+    let block = $(this).parent();
+    let originalClasses = block.attr('class');
+
+    block.attr('class', 'animate');
+
+    setTimeout(function() {
+      block.addClass(originalClasses);
+    }, 20);
+  });
+});
+</script>
 
 </body>
 </html>
