@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Su ile İlgili Hikaye</title>
-  <link href="https://fonts.googleapis.com/css?family=Calligraffitti|Open+Sans" rel="stylesheet">
 
   <style>
     * {
@@ -53,50 +52,6 @@
       font-size: 32px;
     }
 
-    h1 {
-      font-family: 'Calligraffitti';
-    }
-
-    h3 {
-      font-family: 'Open Sans';
-    }
-
-    .sea {
-      border: 3px dashed #000;
-    }
-
-    .LightWaves {
-      animation: lightwaves 2s infinite;
-      position: relative;
-    }
-
-    @keyframes lightwaves {
-      0%,100% { transform: translate(0,0); }
-      25% { transform: translate(5px,5px); transform: scale(1.05); }
-      50% { transform: translate(25px, 5px); }
-      75% { transform: translate(12px,10px); transform: scale(1.05); }
-    }
-
-    .DarkWaves {
-      animation: darkwaves 3.8s infinite;
-    }
-
-    @keyframes darkwaves {
-      0%,100% { transform: translate(0,0); }
-      25% { transform: translate(25px, 5px); transform: scale(1.05); }
-      50% { transform: translate(12px,10px); }
-      75% { transform: translate(5px,5px); }
-    }
-
-    .WhiteWaves {
-      animation: whitewaves 4s alternate ease infinite;
-    }
-
-    @keyframes whitewaves {
-      0% { transform: translate(0,25px); }
-      100% { transform: translate(25px,35px); }
-    }
-
     .btn {
       display: inline-block;
       background-color: #007acc;
@@ -140,67 +95,46 @@
     <form action="/" method="post">
       <button class="btn" type="submit">Geri Dön?</button>
     </form>
-
-    <div style="text-align: center;">
-      <h1>Waves</h1>
-      <h3>December challenge - Water</h3>
-    </div>
-
-    <svg class="sea" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="600px"
-         height="400px" viewBox="0 0 800 350" style="enable-background:new 0 0 800 400;" xml:space="preserve">
-      <g id="Sky" class="sky">
-        <radialGradient id="SVGID_1_" cx="400" cy="202.5" r="317.3423" gradientUnits="userSpaceOnUse">
-          <stop offset="0" style="stop-color:#E6DBFA"/>
-          <stop offset="3.659654e-002" style="stop-color:#E5DCFA"/>
-          <stop offset="0.5708" style="stop-color:#D5EBFE"/>
-          <stop offset="1" style="stop-color:#D0F0FF"/>
-        </radialGradient>
-        <rect y="-1" class="st1" width="800" height="407"/>
-      </g>
-      <g id="DarkWaves" class="DarkWaves">
-        <g>
-          <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="400.0005" y1="602" x2="400.0005" y2="202.3545">
-            <stop offset="0" style="stop-color:#0000FF"/>
-            <stop offset="0.1789" style="stop-color:#0020EC"/>
-            <stop offset="0.4149" style="stop-color:#0043D7"/>
-            <stop offset="0.6374" style="stop-color:#005CC8"/>
-            <stop offset="0.8386" style="stop-color:#006CBF"/>
-            <stop offset="1" style="stop-color:#0071BC"/>
-          </linearGradient>
-          <path class="st2" d="M761.8,202.4c-24.7,0-36.7,7.2-49.5,14.7c-13.2,7.8-26.8,15.9-53.8,15.9c-27,0-40.6-8.1-53.8-15.9
-            c-12.8-7.6-24.9-14.7-49.6-14.7c-24.7,0-36.8,7.2-49.6,14.7c-13.2,7.8-26.8,15.9-53.8,15.9c-27,0-40.7-8.1-53.8-15.9
-            c-12.8-7.6-24.9-14.7-49.6-14.7c-24.7,0-36.8,7.2-49.6,14.7c-13.2,7.8-26.8,15.9-53.8,15.9c-27,0-40.7-8.1-53.8-15.9
-            c-12.8-7.6-24.9-14.7-49.6-14.7c-24.7,0-36.8,7.2-49.6,14.7C78.7,224.9,65,232.9,38,232.9c-27,0-40.4-8.1-53.6-15.9
-            c-12.1-7.1-24.3-13.9-45.4-14.6V602h922V232.9c-22.6-0.8-37.2-8.4-49.7-15.8C798.5,209.5,786.5,202.4,761.8,202.4z"/>
-        </g>
-      </g>
-      <g id="LightWaves" class="LightWaves">
-        <g>
-          <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="400.0005" y1="600" x2="400.0005" y2="214.3545">
-            <stop offset="0" style="stop-color:#0000FF"/>
-            <stop offset="0.1643" style="stop-color:#0B2CF7"/>
-            <stop offset="0.3574" style="stop-color:#1559F0"/>
-            <stop offset="0.5431" style="stop-color:#1E7DEA"/>
-            <stop offset="0.7168" style="stop-color:#2496E6"/>
-            <stop offset="0.874" style="stop-color:#28A6E3"/>
-            <stop offset="1" style="stop-color:#29ABE2"/>
-          </linearGradient>
-          <path class="st3" d="M750.9,229.8c-14.8-7.9-28.7-15.4-57.2-15.4c-28.5,0-42.4,7.5-57.2,15.4c-15.2,8.2-30.9,16.6-62.1,16.6
-            s-46.9-8.4-62.1-16.6c-14.8-7.9-28.7-15.4-57.2-15.4c-28.5,0-42.4,7.5-57.2,15.4c-15.2,8.2-30.9,16.6-62.1,16.6
-            c-31.2,0-46.9-8.4-62.1-16.6c-14.8-7.9-28.7-15.4-57.2-15.4c-28.5,0-42.4,7.5-57.2,15.4c-15.2,8.2-30.9,16.6-62.1,16.6
-            c-31.2,0-46.9-8.4-62.1-16.6c-14.8-7.9-28.9-15.4-57.3-15.4c-16.9,0-28.8,2.6-38.8,6.4V600h922V237c-12,5.3-26,9.4-47.8,9.4
-            C782.1,246.4,766.1,237.9,750.9,229.8z"/>
-        </g>
-      </g>
-      <g id="WhiteWaves" class="WhiteWaves">
-        <g class="st0">
-          <path class="st4" d="M-71,220c94.2,0,94.2,18,188.4,18c94.2,0,94.2-18,188.4-18c94.2,0,94.2,18,188.4,18c94.2,0,94.2-18,188.4-18
-            s94.2,18,188.4,18"/>
-        </g>
-      </g>
-    </svg>
+	  <h1 class="title">SUİJİN’İN GÖZYAŞLARI</h1>
 	  <p class="paragraph">
-		  SON SU KAYNAĞI 1
+Hikayemize başlamadan önce size Suijin hakkında bilgi vermek istiyorum.
+Suijin Japon mitolojisinde önemli bir konumdadır.
+		  Tatlı su kaynaklarını korumak nehir ve pınarlara zarar verilmesini önlemek gibi önemli görevlere sahip bir su tanrısıdır. <br> <br> <br>
+
+
+Bir zamanlar Suijin adında kutsal bir su perisi varmış.Suijin asil ruhlu,şefkatli aynı zamanda öfkeliymiş.
+		  Hayır Suijin’in öfkelendiği kısıtlı şeyler varmış.Ama kısıtlı şeyler az olduğu gibi önemli şeylermiş.
+		  Yani su.Suijin suyu korumak için gece gündüz ülkeleri gezer insanları gözlemlermiş.Aynı zamanda sularla konuşur, ağaçlarla konuşur onlara zarar veren insanları cezalandırırmış. <br> <br>
+
+Yine bir gün filanca ülkenin filanca köyüne gitmiş.Karşılaştığı manzara ise onu şok etmiş.Yerlere atılmış çöpler,su kenarlarında ölmüş balıklar,ve köy sakinlerinin hiç bir şey olmamış gibi hayatlarına devam etmeleri.Suijin köylülerin karşısına bir tanrıça olarak çıkamazmış,onları cezalandırmadan önce uyarması gerekiyormuş.Çünkü kurallar böyleymiş.Suijin normal bir insana dönüşüp köylülerin arasına karışmış.Köyde dolaşırken bir hanın yanına gelmiş.O sırada hanın sahibinin ve bir tüccarın konuşmalarını duymuş. <br> <br>
+
+Tüccar: <br>
+-Nasılsın hancı ağa? <br> <br>
+
+ Hancı: <br>
+-Nasıl olayım;köyde sular tükeniyor,çocuklar hastalanıyor.Daha iki sene önce sularımız besberrak ve tertemizdi.Çocuklar dışarıda koşturur köyü birbirine katarlardı.Şimdi ise ayağa kalkacak halleri bile yok.Ah ah çok özlüyorum o günleri. <br> <br>
+
+Tüccar: <br>
+		  Hancı ağa sizin köye geldim geleli,sizin suları içtim içeli bende de bir halsizlik var.Ayrıca suların tadı da bir farklı,bir değişik yanlış anlama içerken midem bulanıyor. <br> <br>
+
+Hancı: <br>
+		  Sularımızda da bir sorun yok halbuki. <br> <br> <br>
+
+
+Suijin konuşmanın devamını dinleyecek gücü kendinde bulamadı.Artık bir şey yapmalıydı.Bunları düşünürken hüzünden gözünden bir damla yaş düştü.Düştüğü an tüm köy kurudu,sular tükendi,balıklar semaya yükseldi ve insanlar şaşırıp kaldı.Suijin kendi bedenine döndü ve insanlara bağırdı “Hepiniz benimle geliyorsunuz.”Ve suyun gücü ile hepsi geleceğe ışınlandı.Gözlerini açtıklarında ise sırtlarında kocaman şişeler taşıyan halkı gördüler.Hepsi aynı yöne doğru ilerliyorlardı.Suya.Ama su demeye bin şahit.Bataklığın içine gömülmüş küçük bir su birikintisi.Suijin konuşmaya başladı. <br> <br>
+
+Suijin: <br>
+-Ey halk burası neresi biliyor musunuz?Sizin ve sizin gibilerin yüzünden susuz kalan Afrika. <br> <br>
+
+Halk: <br>
+-İyi de neden bizim yüzümüzden neden susuz kalsınlar? <br><br>
+
+Suijin: <br> 
+-Sizin suyu yanlış kullanıp boşa harcamanızdan dolayı. <br> <br>
+
+-Halk bu masum insanları izlerken aynı zamanda ne kadar yanlış bir şey yaptıklarının farkına varmışlardı.Suijin köyü tekrar hayata döndürdü ve Afrika’nın susuzluğu da bir milim azalmış oldu.</p>
+	  <p class="paragraph">
+SON SU KAYNAĞI 1
 Bölüm 1.1: Suların Sessizliği
 Yıl 2054’tü.
 Bir zamanlar deniz kokan şehirlerde şimdi rüzgâr bile kuru esiyordu. Gökyüzü hâlâ mavi görünüyordu ama bulutlar artık su taşımıyordu. Türkiye’nin çoğu yerinde su damlaları devletin koruması altındaydı; insanlar “Su İzin Kartı” olmadan bir şişe su bile alamıyordu.
