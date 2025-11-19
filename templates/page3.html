@@ -4,96 +4,482 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Su ile İlgili Hikaye</title>
+  <link href="https://fonts.googleapis.com/css?family=Calligraffitti|Open+Sans" rel="stylesheet">
+
   <style>
-* {
-	margin: 0;
-	padding: 0;
- }
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
- body {
-	font-family: 'Lato', sans-serif;
-	font-size: 14px;
-	background-color: #46CFCD;
-	word-wrap: break-word;
- }
+    body {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      background-color: #46CFCD;
+      word-wrap: break-word;
+    }
 
-.container {
-	width: 100%;
-	margin: auto;
-	font-weight: 900;
-	text-transform: uppercase;
-	text-align: center;
-	padding: 0 0 200px;
-}
+    .container {
+      width: 100%;
+      margin: auto;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 0 0 200px;
+    }
 
-.content {
-  background-color: white;
-  border: 5px solid #00a0ff;
-  border-radius: 40px;
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 25px 30px;
-  box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
-  line-height: 1.6;
-}
+    .content {
+      background-color: white;
+      border: 5px solid #00a0ff;
+      border-radius: 40px;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 25px 30px;
+      box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
+      line-height: 1.6;
+    }
 
-.paragraph {
-  font-size: 2.2em;  
-  color: #333;
-  text-align: justify;
-  margin-bottom: 20px;
-}
+    .paragraph {
+      font-size: 2.2em;  
+      color: #333;
+      text-align: justify;
+      margin-bottom: 20px;
+    }
 
-.title {
-	color: #007acc;
-    text-align: center;
-    margin-bottom: 20px;
-	font-size: 32px;
-}
+    .title {
+      color: #007acc;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
 
-.btn {
-  display: inline-block;
-  background-color: #007acc;
-  color: white;
-  text-align: center;
-  padding: 12px 25px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 122, 204, 0.4);
-  cursor: pointer;
-  transition: transform 0.4s ease, background-color 0.3s ease;
-}
+    h1 {
+      font-family: 'Calligraffitti';
+    }
 
-.btn:hover {
-  transform: scale(1.2);
-  background-color: #005f99;
-}
+    h3 {
+      font-family: 'Open Sans';
+    }
 
-@media (max-width: 768px) {
-  .content {
-    padding: 20px 15px;
-    margin: 30px 20px 60px 20px;
-  }
+    .sea {
+      border: 3px dashed #000;
+    }
 
-  .paragraph {
-    font-size: 1.8em;
-  }
-}
+    .LightWaves {
+      animation: lightwaves 2s infinite;
+      position: relative;
+    }
 
-  .highlight {
-	font-weight: 900;
-  }
+    @keyframes lightwaves {
+      0%,100% { transform: translate(0,0); }
+      25% { transform: translate(5px,5px); transform: scale(1.05); }
+      50% { transform: translate(25px, 5px); }
+      75% { transform: translate(12px,10px); transform: scale(1.05); }
+    }
+
+    .DarkWaves {
+      animation: darkwaves 3.8s infinite;
+    }
+
+    @keyframes darkwaves {
+      0%,100% { transform: translate(0,0); }
+      25% { transform: translate(25px, 5px); transform: scale(1.05); }
+      50% { transform: translate(12px,10px); }
+      75% { transform: translate(5px,5px); }
+    }
+
+    .WhiteWaves {
+      animation: whitewaves 4s alternate ease infinite;
+    }
+
+    @keyframes whitewaves {
+      0% { transform: translate(0,25px); }
+      100% { transform: translate(25px,35px); }
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #007acc;
+      color: white;
+      text-align: center;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 122, 204, 0.4);
+      cursor: pointer;
+      transition: transform 0.4s ease, background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.2);
+      background-color: #005f99;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        padding: 20px 15px;
+        margin: 30px 20px 60px 20px;
+      }
+
+      .paragraph {
+        font-size: 1.8em;
+      }
+    }
+
+    .highlight {
+      font-weight: 900;
+    }
   </style>
 </head>
+
 <body>
 
   <div class="content">
     <form action="/" method="post">
-        <button class="btn" type="submit">Geri Dön?</button>
+      <button class="btn" type="submit">Geri Dön?</button>
     </form>
 
+    <div style="text-align: center;">
+      <h1>Waves</h1>
+      <h3>December challenge - Water</h3>
+    </div>
+
+    <svg class="sea" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="600px"
+         height="400px" viewBox="0 0 800 350" style="enable-background:new 0 0 800 400;" xml:space="preserve">
+      <g id="Sky" class="sky">
+        <radialGradient id="SVGID_1_" cx="400" cy="202.5" r="317.3423" gradientUnits="userSpaceOnUse">
+          <stop offset="0" style="stop-color:#E6DBFA"/>
+          <stop offset="3.659654e-002" style="stop-color:#E5DCFA"/>
+          <stop offset="0.5708" style="stop-color:#D5EBFE"/>
+          <stop offset="1" style="stop-color:#D0F0FF"/>
+        </radialGradient>
+        <rect y="-1" class="st1" width="800" height="407"/>
+      </g>
+      <g id="DarkWaves" class="DarkWaves">
+        <g>
+          <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="400.0005" y1="602" x2="400.0005" y2="202.3545">
+            <stop offset="0" style="stop-color:#0000FF"/>
+            <stop offset="0.1789" style="stop-color:#0020EC"/>
+            <stop offset="0.4149" style="stop-color:#0043D7"/>
+            <stop offset="0.6374" style="stop-color:#005CC8"/>
+            <stop offset="0.8386" style="stop-color:#006CBF"/>
+            <stop offset="1" style="stop-color:#0071BC"/>
+          </linearGradient>
+          <path class="st2" d="M761.8,202.4c-24.7,0-36.7,7.2-49.5,14.7c-13.2,7.8-26.8,15.9-53.8,15.9c-27,0-40.6-8.1-53.8-15.9
+            c-12.8-7.6-24.9-14.7-49.6-14.7c-24.7,0-36.8,7.2-49.6,14.7c-13.2,7.8-26.8,15.9-53.8,15.9c-27,0-40.7-8.1-53.8-15.9
+            c-12.8-7.6-24.9-14.7-49.6-14.7c-24.7,0-36.8,7.2-49.6,14.7c-13.2,7.8-26.8,15.9-53.8,15.9c-27,0-40.7-8.1-53.8-15.9
+            c-12.8-7.6-24.9-14.7-49.6-14.7c-24.7,0-36.8,7.2-49.6,14.7C78.7,224.9,65,232.9,38,232.9c-27,0-40.4-8.1-53.6-15.9
+            c-12.1-7.1-24.3-13.9-45.4-14.6V602h922V232.9c-22.6-0.8-37.2-8.4-49.7-15.8C798.5,209.5,786.5,202.4,761.8,202.4z"/>
+        </g>
+      </g>
+      <g id="LightWaves" class="LightWaves">
+        <g>
+          <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="400.0005" y1="600" x2="400.0005" y2="214.3545">
+            <stop offset="0" style="stop-color:#0000FF"/>
+            <stop offset="0.1643" style="stop-color:#0B2CF7"/>
+            <stop offset="0.3574" style="stop-color:#1559F0"/>
+            <stop offset="0.5431" style="stop-color:#1E7DEA"/>
+            <stop offset="0.7168" style="stop-color:#2496E6"/>
+            <stop offset="0.874" style="stop-color:#28A6E3"/>
+            <stop offset="1" style="stop-color:#29ABE2"/>
+          </linearGradient>
+          <path class="st3" d="M750.9,229.8c-14.8-7.9-28.7-15.4-57.2-15.4c-28.5,0-42.4,7.5-57.2,15.4c-15.2,8.2-30.9,16.6-62.1,16.6
+            s-46.9-8.4-62.1-16.6c-14.8-7.9-28.7-15.4-57.2-15.4c-28.5,0-42.4,7.5-57.2,15.4c-15.2,8.2-30.9,16.6-62.1,16.6
+            c-31.2,0-46.9-8.4-62.1-16.6c-14.8-7.9-28.7-15.4-57.2-15.4c-28.5,0-42.4,7.5-57.2,15.4c-15.2,8.2-30.9,16.6-62.1,16.6
+            c-31.2,0-46.9-8.4-62.1-16.6c-14.8-7.9-28.9-15.4-57.3-15.4c-16.9,0-28.8,2.6-38.8,6.4V600h922V237c-12,5.3-26,9.4-47.8,9.4
+            C782.1,246.4,766.1,237.9,750.9,229.8z"/>
+        </g>
+      </g>
+      <g id="WhiteWaves" class="WhiteWaves">
+        <g class="st0">
+          <path class="st4" d="M-71,220c94.2,0,94.2,18,188.4,18c94.2,0,94.2-18,188.4-18c94.2,0,94.2,18,188.4,18c94.2,0,94.2-18,188.4-18
+            s94.2,18,188.4,18"/>
+        </g>
+      </g>
+    </svg>
+	  <p class="paragraph">
+		  SON SU KAYNAĞI 1
+Bölüm 1.1: Suların Sessizliği
+Yıl 2054’tü.
+Bir zamanlar deniz kokan şehirlerde şimdi rüzgâr bile kuru esiyordu. Gökyüzü hâlâ mavi görünüyordu ama bulutlar artık su taşımıyordu. Türkiye’nin çoğu yerinde su damlaları devletin koruması altındaydı; insanlar “Su İzin Kartı” olmadan bir şişe su bile alamıyordu.
+Komiser Derya Yalın, İstanbul Su Suçları Birimi’nin en iyi polislerinden biriydi. Onun görevi, kaçak kuyuları bulmak, yasa dışı su satıcılarını yakalamaktı.
+Ama Derya’nın işi her geçen gün daha zorlaşıyordu , çünkü insanlar umutsuzdu.
+Evine geldiğinde, 12 yaşındaki oğlu Emirhan, mutfak masasında eski bir tabletin ekranına eğilmişti.
+“Anne! Bak, bir çocuk suyun altında yaşayan şehir yapmış. Dalgıç robotlarla yaşıyorlar! Biz de öyle olsak keşke.”
+Derya gülümsedi.
+“Keşke oğlum. Ama önce o kadar su bulmamız lazım.”
+O sırada Derya’nın bileğindeki akıllı bilezik titredi.
+Acil Bildirim: Su Kaçakçılığı Şüphesi  Marmara Bölgesi, Tuz Gölü Yakını.
+Derya’nın gözleri ciddileşti.
+“Emirhan, ben çıkıyorum. Geç kalma, tamam mı?”
+Ama Emirhan meraklıydı. Her zaman annesinin davalarına gizliden gizliden bakar, ipuçlarını araştırırdı.
+O gece de öyle yaptı.
+Derya gittikten sonra bilekliğin eski kayıtlarına baktı.
+Koordinatlar açıkça yazıyordu: Tuz Gölü Bölge 9.
+Ekrana uzun uzun baktı.
+“Tuz Gölü kurumuştu Ama ya gerçekten kurumuş değilse?”
+Emirhan’ın içinde bir ses, bu olayın farklı olduğunu söylüyordu.
+Belki de orada , son su kaynağı gizlenmişti.
+Bölüm 1.2: Tuz Gölü’nün Altındaki Sır
+Ertesi sabah Derya, zırhlı polis aracıyla Tuz Gölü çevresine ulaştı.
+Göl artık sadece beyaz bir toz çölüydü. Ama sensörler toprağın altında nem tespit ediyordu.
+Derya yanındaki robot köpek ALFA’ya seslendi:
+“Yüzey taraması başlat. Su sinyali ara.”
+ALFA’nın gözleri mavi parladı, bip sesleri duyuldu.
+Birden cihaz “Tespit edildi!” dedi.
+Yer altından gelen sinyal, insan yapımı bir tünele işaret ediyordu.
+Ama Derya’nın bilmediği bir şey vardı: Emirhan da gizlice annesini takip etmişti.
+Küçük bir elektrikli kaykayla sınır güvenliğini aşmış, göl kenarına ulaşmıştı.
+“Sadece bir bakıp döneceğim,” dedi kendi kendine.
+Fakat o sırada tünelin girişi açıldı. Derya ve ekibi aşağı inerken Emirhan da uzaktan onları izliyordu.
+Tünelin duvarlarında yosun izleri vardı. İçerisi nemliydi.
+Derya şaşırdı:
+“Burası… gerçekten su tutuyor.”
+Ama aşağıda başka izler de vardı  ayak izleri.
+Birileri buraya daha önce girmişti.
+Ve tünelin sonunda Derya, metal bir kapıya ulaştı.
+Kapının üzerinde şu yazıyordu:
+“AquaGen Tesisi 2031”
+Bölüm 1.3: Eski Bir Deneyin İzleri
+Derya kapıyı açtığında içeriden soğuk hava esti. Duvarlar ekranlarla doluydu, eski laboratuvar eşyaları, su örnekleri…
+Bir köşede hologram kayıt cihazı parlıyordu.
+Ekranda beyaz önlüklü bir bilim insanı belirdi:
+“Proje AquaGen  hedef: yapay su üretimi. Uyarı: numune kararsız, içilmemelidir.”
+Derya nefesini tuttu.
+“Yapay su mu?.. Demek yıllar önce denemişler.”
+Tam o sırada arkadan bir ses geldi.
+“Anne?”
+Derya döndü. Emirhan karanlıkta duruyordu.
+“Emirhan?! Burada ne işin var!?”
+“Ben sadece… seni merak ettim. Hem burası inanılmaz!”
+Derya bir yandan kızgındı, bir yandan gururluydu. Oğlu gerçekten meraklı bir zekâya sahipti.
+Ama zaman yoktu. Laboratuvarın derinliklerinden su sesi geliyordu.
+ALFA uyarı verdi:
+“Yaklaşan hareket tespit edildi.”
+Bir grup siyah giysili insan belirdi Su Avcıları. Eski mühendisler, şimdi suyu karaborsada satan bir çete.
+“Komiser Yalın sonunda seni bulduk,” dedi başlarındaki kadın.
+“Bu su bize ait. İnsanlık onu hak etmedi.”
+Bölüm 1.4: Su Avcıları ile Karşılaşma
+Derya kalkanını açtı, ALFA savunma moduna geçti.
+Ama çete ağır silahlar yerine su depolarıyla dolu sırt çantaları taşıyordu.
+Onlar da sadece hayatta kalmaya çalışıyordu.
+Derya sert ama kararlı bir sesle konuştu:
+“Bu su insanlığın. Paylaşılmalı.”
+Kadın gülümsedi.
+“Bu suyu paylaşmak mı? Bu su yapay, komiser. İçen herkes hastalanır. Biz onu kontrol ediyoruz çünkü kimse bir daha suya güvenmemeli.”
+Emirhan gizlice laboratuvarın köşesine ilerledi. Bir terminale erişti.
+Ekranda bir dosya buldu: “Gerçek Kaynak  Koordinatlar”
+Koordinatlar Tuz Gölü’nün kuzeyinde, yer altına 200 metre derindeydi.
+Emirhan annesine fısıldadı:
+“Anne! Asıl kaynak burada değil, daha derindeymiş!”
+Derya anında plan yaptı.
+ALFA’ya gizli ileti gönderdi: “Dikkat dağıt. Emirhan’ı dışarı çıkar.”
+Robot havlamaya başladı, sirenler çaldı, su avcıları şaşkına döndü.
+Anne ve oğul tünelin derinliklerine doğru koştu.
+Bölüm 1.5: Gerçek Kaynağa Yolculuk
+Yol zorluydu. Yeraltında dar tüneller, eski borular, karanlık odalar…
+Ama sonunda su sesi yeniden duyuldu  bu kez daha saf, daha temizdi.
+Bir kapıdan geçtiler ve önlerinde parlayan bir mağara belirdi.
+Tavandan sarkan kristallerden damlalar düşüyordu.
+Ortada küçük bir gölcük vardı.
+Emirhan diz çöktü, elini suya daldırdı.
+“Gerçek su... Soğuk, canlı!”
+Derya, yıllar sonra ilk kez umut hissetti.
+Ama aynı anda ALFA’dan mesaj geldi:
+“Su Avcıları yaklaşıyor.”
+Derya silahını çekti.
+“Emirhan, saklan!”
+Bölüm 1.6: Su Uğruna
+Çete mağaraya girdi.
+Kadın öne çıktı, elinde su analiz cihazı vardı.
+“Gördün mü? Bu su doğal ama radyoaktif minerallerle dolu. İnsan vücudu dayanamaz.”
+Emirhan itiraz etti:
+“Hayır! Belki arındırabiliriz. Annem gibi insanlar çalışırsa bu suyu kurtarabiliriz.”
+Kadın başını salladı.
+“Çok geç çocuk. Bu dünya kendini çoktan kaybetti.”
+Derya ileri atıldı, cihazı kaptı ve ALFA’ya bağladı.
+“ALFA, örneği analiz et!”
+Kısa bir sessizlikten sonra robot cevapladı:
+“Suyun üst katmanı temiz. Yüzeydeki mineraller ışıkla tepkimeye giriyor. Arıtma mümkün.”
+Emirhan gözleri parlayarak bağırdı:
+“Yani kurtulabiliriz!”
+Kadın sessiz kaldı.
+İlk kez yüzünde bir umut kıvılcımı belirdi.
+Bölüm 1.7: Yeni Bir Başlangıç
+Derya, suyun arıtılması için acil bir protokol başlattı.
+Hükûmetle bağlantıya geçti, koordinatları gönderdi.
+Kısa sürede dronlar, bilim insanları ve enerji modülleri mağaraya ulaştı.
+Bir hafta sonra Tuz Gölü yeniden haberlerdeydi.
+“Yeni su kaynağı bulundu!”
+Ama Derya gerçeği biliyordu.
+Bu sadece bir başlangıçtı. Gerçek mucize, insanların suyu paylaşmayı öğrenmesiydi.
+Emirhan, göl kenarında annesinin yanında durdu.
+“Anne o zaman dünya yeniden mavi olacak mı?”
+Derya gülümsedi.
+“Belki hemen değil, ama bir gün mutlaka.”
+Bölüm 1.8: Suların Dönüşü
+Aylar geçti.
+Tuz Gölü çevresinde küçük bir gölet oluştu. Kuşlar geri dönmeye başladı, çocuklar su sesiyle gülüyordu.
+Emirhan kendi okulunda “Su Dedektifleri” adında bir kulüp kurdu.
+Arkadaşlarıyla birlikte şehirde su kaçaklarını, boşa akan muslukları tespit ediyorlardı.
+Bir gün annesine bir mesaj gönderdi:
+“Anne, bu sefer su avcılarını ben yakaladım!”
+Derya kahkaha attı.
+“Demek şimdi sen de su polisi oldun ha?”
+Emirhan cevapladı:
+“Yok anne Ben sadece suyu koruyorum. Çünkü sen bana suyun aslında hayat olduğunu öğrettin.”
+Gökyüzünde o gün ilk kez yağmur damlaları düştü.
+İnsanlar ellerini göğe kaldırdı, suyu hissetti.
+Ve o anda Derya içinden geçirdi:
+“Belki de Emirhan haklıydı. Suyu değil, suyun neden değerli olduğunu kurtardık.”
+Bölüm 2.1:Yağmurun Getirdiği Sorular
+Yağmurun ilk damlaları şehre umut gibi düşmüştü Ama o umut uzun sürmedi.
+Komiser Derya Yalın, İstanbul Su Suçları Birimi merkezinde raporları incelerken yüzü ciddileşti. Yeni yağmur ölçerler olağan dışı bir veri yakalamıştı:
+Yağan suyun bir kısmı… doğal değil.
+Mineral oranları anormaldi, tıpkı eski AquaGen numuneleri gibi.
+Derya kendi kendine mırıldandı:
+“Kim… bu kadar suyu yapay olarak üretebilir ki?”
+O sırada kapı açıldı. Emirhan içeri girdi; okuldan direkt buraya gelmişti.
+“Anne, yağmur güzel ama herkes neden panik yapıyor?”
+Derya oğluna bakıp iç geçirdi.
+“Çünkü bu yağmurun tamamı gökten gelmemiş olabilir.”
+Emirhan’ın gözleri büyüdü.
+“Yine biri suyla mı oynuyor?”
+Derya başını salladı.
+“Evet. Ve bu kez çok daha büyük biri.”
+Bölüm 2.2: Sinyalin Kaynağı
+ALFA robot köpek, laboratuvarın ortasında hologram bir harita açtı.
+“Marmara çevresinde beş farklı bölgede yapay su tespit edildi.”
+Derya kaşlarını çattı.
+“Bu kadar geniş ölçekli üretim ancak bir devlet, bir mega şirket veya çok güçlü bir örgüt yapabilir.”
+Emirhan haritaya yaklaştı.
+“Bak anne sinyaller bir noktada birleşiyor.”
+Haritanın merkezinde tek bir yer yanıp sönüyordu:
+Karakaya Dağları Bölge 5
+Derya fısıldadı:
+“Orada… eski bir askeri araştırma üssü vardı.”
+Emirhan heyecanlandı:
+“Orada birileri gizlice yeni bir AquaGen mi yapıyor?”
+Derya cevap vermedi.
+Çünkü bunu o da düşünmek istemiyordu.
+Bölüm 2.3: 5 Üssüne Yolculuk
+Ertesi sabah Derya, ALFA ve bir keşif ekibiyle dağa doğru yola çıktı.
+Kar fırtınası gibi soğuk bir rüzgâr esiyordu; iklim değişmiş, Türkiye’nin kalbi bile soğumaya başlamıştı.
+Üssün girişine geldiklerinde kapı yarı açıktı.
+Derya silahını kaldırdı.
+“Hazır olun. Biri buradaydı… hâlâ da olabilir.”
+İçeride terk edilmiş laboratuvarlar, kırık camlar ve duvarlarda karalamalar vardı.
+Bir yazı özellikle Derya’nın dikkatini çekti:
+“SU KADER DEĞİLDİR.”
+Emirhan olsaydı bunu mutlaka yorumlardı, diye düşündü.
+Sonra bir ses duyuldu.
+ALFA uyardı:
+“Hareket tespit edildi.”
+Karanlıkta biri nefesini tutmuş onları izliyordu.
+Bölüm 2.4: Gölgelerin İçinden Çıkan Adam
+Derya fenerini doğrulttu.
+İnce yapılı, sakallı bir adam ellerini kaldırarak ortaya çıktı.
+“Vurmayın! Ben Dr. Erdem Kara.”
+Derya irkildi.
+“Erdem Kara mı? AquaGen projesinin kurucularından biri Erdem Kara'ydı.”
+Adam başıyla onayladı.
+“Evet. Ve o proje yüzünden hayatım karardı.”
+Derya soruyu yapıştırdı:
+“Yağmuru siz mi ürettiniz?”
+Adam gözlerini kaçırdı.
+“Hayır. Ama onları durdurmak için buradayım.”
+“Onlar kim?”
+Adam yavaşça derin nefes aldı.
+“AquaGen 2.0 projesini başlatanlar… artık hükümet değil. Küresel bir konsorsiyum. Yeni dünya düzeni için suyu silah yapıyorlar.”
+Derya’nın kanı dondu.
+Bölüm 2.5: Proje AquaGen 2.0
+Erdem Kara onları eski merkezi kontrol odasına götürdü.
+Hologram masa kendi kendine açıldı, dosyalar parladı.
+Erdem anlatmaya başladı:
+“Ben yıllar önce yapay suyu üretmenin insanlığa faydası olacağını sanmıştım. Ama sonra fark ettim… yapay su, doğal havzaları kirletiyor.”
+Derya kaşlarını çattı.
+“Yani yağmur… kirli bir döngü yaratıyor?”
+“Evet. Eğer durdurmazsak 10 yıl içinde gezegenin su döngüsü çöker. Denizler bile bozulur.”
+ALFA verileri doğruladı.
+“Sinyaller artıyor. Üretim kapasitesi yükseltilmiş.”
+Derya sordu:
+“Peki üssü neden terk etmişler?”
+Erdem gülümsedi.
+“Çünkü asıl üretim merkezi burada değil.”
+Hologramda yeni bir koordinat çıktı:
+“AquaGen Merkez Tesisi – Marmara Açıkları – Deniz Altı, Seviye 12”
+Derya şaşkınlıkla sordu:
+“Denizin altında mı?”
+“Evet. Ve oraya inmek… ölümcül olabilir.”
+Bölüm 2.6: Emirhan’ın Gizli Mesajı
+Aynı anda İstanbul’da Emirhan, annesinin ekibinin açık bıraktığı terminalde araştırma yapıyordu.
+“Su Dedektifleri” kulübünden üç arkadaşı yanındaydı.
+Bir dosya dikkatini çekti:
+“AquaGen 2.0  Çocuklar için İçerik Uyarısı”
+Ama dosya kilitliydi.
+Emirhan parmaklarını ekrana vurdu.
+“Hadi… açıl…”
+Sonunda dosya açıldı.
+Görüntüler korkutucuydu: Dev denizaltı tünelleri, parlayan sahte su havzaları, yüzlerce işçi…
+Ve bir rapor:
+“Yapay suyun büyük kısmı atmosfer döngüsüne pompalanacak.”
+Emirhan’ın nefesi kesildi.
+“Yağmur… yapay yağmurmuş!”
+Hemen annesine mesaj attı:
+“Anne! Yağmur gerçek değil! Dikkatli olun!”
+Ama sinyal karıştı.
+Mesaj yola çıktı fakat…
+karşı tarafa bozularak ulaştı.
+Bölüm 2.7: Deniz Altının Kapısı
+Derya ve ekibi denizaltı modülüne binerken bozuk mesaj geldi.
+Sadece üç kelime netti:
+“Yağmur değil tehlike”
+Derya dişlerini sıktı.
+“Emirhan bir şey buldu. Ve büyük olmalı.”
+Denizaltı yavaşça derinlere inmeye başladı.
+Pencereden dışarı bakınca ışık huzmeleri karanlık suya karışıyordu.
+Sonunda devasa bir kapı belirdi:
+AquaGen 2.0 – Ana Üretim Merkezi
+Kapı kendi kendine açıldı.
+İçeriden mavi ışıklar, dev su tanklarının sesi ve insanı titreten bir uğultu yükseliyordu.
+Erdem Kara fısıldadı:
+“İşte… dünyanın kaderini değiştirecek makine.”
+Derya tabancasını kavradı.
+“Ve biz onu durduracağız.”
+Bölüm 2.8: Yapay Yağmurun Kalbi
+Tesise girdiklerinde metal koridorlar boyunca onlarca robot işçi çalışıyordu.
+Orta odada dev bir makine yükseliyordu:
+Atmosferik Su Pompaj Çekirdeği
+Bir robotik kol gökyüzüne dev bir boru uzatıyordu.
+Derya bağırdı:
+“Bunu durdurun! Gezegenin su döngüsünü yok edeceksiniz!”
+Gölgelerden biri çıktı.
+Siyah kıyafetli bir kadın. Sakin, soğuk.
+“Komiser Yalın… yine sen. Bu kez karşında devlet yok. Tüm dünyanın su geleceğini yönetenler var.”
+Derya gözlerini kısmıştı.
+“Su geleceğini yönetemezsiniz.”
+Kadın gülümsedi.
+“Ama kontrol edebiliriz. Çünkü insanlar suyu hak etmiyor.”
+Erdem Kara öne çıktı.
+“Yanılıyorsunuz. Suya ihanet eden sizsiniz!”
+Kadın elini kaldırdı.
+“Makineyi çalıştır.”
+Dev motorlar titredi. Tavan yarıldı. Yapay su gökyüzüne fışkırdı.
+Ama Derya bağırdı:
+“ALFA! Çekirdek kablolarını kopar!”
+ALFA sıçradı, kolunu uzattı
+SİSTEM UYARISI:
+“KORUMA MODU AKTİF.”
+Sistemin içinden yüksek bir ses yankılandı.
+Ve ışıklar patladı. Makine kontrolden çıkmaya başladı.
+																																																																																																								 2054 yılında su, dünyanın en değerli ve en tehlikeli kaynağına dönüşmüştür. İstanbul Su Suçları Birimi’nden Komiser Derya Yalın, kurumuş Tuz Gölü’nün altında gizlenen yasadışı bir tesisi keşfeder. Yanında gizlice gelen oğlu Emirhan’la birlikte, insanlığın kaderini değiştirebilecek gerçek bir su kaynağına ulaşırlar.
+Ancak suyun peşinde sadece onlar yoktur—karaborsa çeteleri, eski bilim insanları ve küresel bir konsorsiyum, yapay suyla dünyayı kontrol etmeye hazırlanmaktadır. Derya ve Emirhan, doğal suyun son damlasını korumak için yeraltı tünellerinden deniz altı laboratuvarlarına uzanan bir maceraya sürüklenir.
+Su tükenirken umut yeniden filizlenebilir mi?
+Yoksa insanlık kendi yaptığı yapay yağmurun altında mı boğulacak?
+
+	  </p>
   </div>
 </body>
 </html>
