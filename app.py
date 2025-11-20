@@ -19,6 +19,10 @@ def hikaye():
 def kaynakca():
     return render_template('page4.html')
 
+@app.route('/ilginc-gercekler', methods=['POST'])
+def kaynakca():
+    return render_template('page5.html')
+
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
