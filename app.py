@@ -20,7 +20,7 @@ def kaynakca():
     return render_template('page4.html')
 
 @app.route('/ilginc-gercekler', methods=['POST'])
-def kaynakca():
+def ilginc_gercekler():
     return render_template('page5.html')
 
 if __name__ == '__main__':
