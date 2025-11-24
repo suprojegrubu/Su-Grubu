@@ -10,6 +10,11 @@
       box-sizing: border-box;
     }
 
+   html {
+    scroll-behavior: smooth;
+  }
+
+
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       background-color: #9cd7ff;
@@ -160,33 +165,67 @@
       flex-shrink: 0;
     }
 
-    .content-second, .content {
-      background-color: white;
-      border: 5px solid #00a0ff;
-      border-radius: 40px;
-      box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
-      line-height: 1.6;
-      position: relative;
-      z-index: 2;
-    }
 
-    .content-second {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 25px 40px;
-      animation: contentanim1 2s forwards;
-    }
+.content-second {
+  background-color: white;
+  border: 4px solid #00a0ff;
+  border-radius: 25px;
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 1000px;
+  width: 95%;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+  animation: contentanim1 1s ease-out forwards;
+  line-height: 1.8;
+}
 
-    .content {
-      padding: 25px 40px;
-      animation: contentanim2 0.5s ease-out forwards;
-      flex: 1;
-    }
+
+.content {
+  background-color: white;
+  border: 4px solid #00a0ff;
+  border-radius: 25px;
+  padding: 25px 30px;
+  margin: 30px auto;
+  max-width: 900px;           
+  width: 100%;               
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+  line-height: 1.7;
+  font-size: 1.1rem;
+  animation: contentanim2 .6s ease-out forwards;
+}
+
+.accordion {
+  background-color: #007acc;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 15px;
+  margin: 15px 0;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background .2s;
+  font-size: 1.1rem;
+}
+
+.accordion:hover {
+  background-color: #005f99;
+}
+
+.panel {
+  display: none;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  background: white;
+  border: 2px solid #007acc;
+  border-radius: 15px;
+}
+
+
 
     .paragraph {
       font-size: 1.1em;
       text-align: justify;
       margin-bottom: 20px;
+      font-family: "Times New Roman", Georgia, Garamond
     }
 
     .btn {
@@ -262,6 +301,7 @@
       color: #007acc;
       text-align: center;
       margin-bottom: 20px;
+      font-family: Monaco, "Courier New", "Lucida Console"
     }
 
     @media (max-width: 480px) {
@@ -328,11 +368,43 @@
   cursor: pointer;
 }
 
+    .navbar {
+  width: 100%;
+  background: #007acc;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.navbar a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+
     
   </style>
 </head>
-
+rel="noopener noreferrer">
 <body>
+  <nav class="navbar">
+  <a href="/">Ana Sayfa</a>
+  <a href="#video">Video</a>
+  <a href="#anket">Anket</a>
+  <a href="#kaynak">Kaynakça</a>
+  </nav>
+
   <div id="drip-container"></div>
 
   <div class="hero-background">
@@ -357,7 +429,7 @@
 
     <img src="{{ url_for('static', filename='SuProjesi-Resim2.jpg') }}" alt="Sağ süsleme resmi" class="side-image">
   </main>
-
+  
   <div class="content-second">
     <p class="paragraph">
       Burada ise anketimiz bulunmaktadır.
@@ -366,14 +438,14 @@
       Ve Kaynakçaya da bakabilirsiniz bizim hangi website ve bilgileri kullandığımız için
       Herneyse hemen haberlere dönelim! 
     </p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-mcaaHfzqC5UPbGjzMz0C7v7CHU9Qx1w8emhHqgNwNbpHtg/viewform?usp=dialog" class="btn">Ankete Giriniz?</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-mcaaHfzqC5UPbGjzMz0C7v7CHU9Qx1w8emhHqgNwNbpHtg/viewform?usp=dialog" class="btn" target="_blank" rel="noopener noreferrer">Ankete Giriniz?</a>
     <br><br>
     <a href="https://read.bookcreator.com/Cd8I2Ld71dXWdMJdOR0s9BnWIG83/hacI0slcRN-NSnh5AYwrpA" class="btn">Su Sözlüğü</a>
     <br><br>
     <form action="/kaynakca" method="post">
       <button class="btn" type="submit">Kullanılan Kaynaklar</button>
     </form>
-    <br><br>
+    <br>
     <form action="/ilginc-gercekler" method="post">
       <button class="btn" type="submit">İlginç Gerçekler (Su ile ilgili)</button>
     </form>
@@ -386,7 +458,8 @@
 </div>
   </div>
 
-
+  <button class="accordion">Haberlerimiz</button>
+  <div class="panel">
   <div class="content-second">
     <h1>Türkiye’de Kuraklık Tehdidi: Su Kaynakları Azalıyor.</h1>
     <p class="paragraph">
@@ -500,6 +573,7 @@
       Bunlar da değişmeden devam ederse 20 ila 30 yılda, yani 2050'lerde Türkiye’nin de su fakiri ülke konumuna düşmesi mümkün.
     </p>
   </div>
+</div>
 
 <div id="videoModal" class="video-overlay">
   <button class="close-video">X</button>
@@ -548,6 +622,16 @@
       video.pause();
     }
   });
+</script>
+
+<script>
+const acc = document.querySelectorAll(".accordion");
+acc.forEach(button => {
+  button.addEventListener("click", () => {
+    const panel = button.nextElementSibling;
+    panel.style.display = (panel.style.display === "block") ? "none" : "block";
+  });
+});
 </script>
 
 </body>
