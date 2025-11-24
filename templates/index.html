@@ -211,27 +211,8 @@
       background-color: #005f99;
     }
 
-    .btn-centered {
-      display: inline-block;
-      background-color: #007acc;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      box-shadow: 0 4px 8px rgba(0, 122, 204, 0.4);
-      cursor: pointer;
-      user-select: none;
-      transition: transform 0.4s ease, background-color 0.3s ease;
-      transform: scale(1);
-      border: none;
-      text-align: center;
-    }
-
-    .btn-centered:hover {
-      transform: scale(1.1);
-      background-color: #005f99;
+    .center {
+        text-align: center;
     }
 
     .button-row {
@@ -396,8 +377,8 @@
   </div>
 
     <div class="content">
-      <p class="paragraph">Burada ise bizim su ile ilgili videomuz</p>
-      <button class="btn-centered" id="openVideoBtn">Videoyu Aç</button>
+      <p class="paragraph center">Burada ise bizim su ile ilgili videomuz</p>
+      <button class="btn center" id="openVideoBtn">Videoyu Aç</button>
     </div>
 
   <div class="content-second">
@@ -526,7 +507,7 @@
 
 <script>
   const container = document.getElementById('drip-container');
-  const numDrops = 20; 
+  const numDrops = 10; 
   for (let i = 0; i < numDrops; i++) {
     const drop = document.createElement('div');
     drop.classList.add('drop');
