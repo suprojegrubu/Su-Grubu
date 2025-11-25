@@ -82,8 +82,8 @@
       padding: 25px 40px;
       box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
       margin: 40px auto;
-      max-width: 90%;
-      height: auto;
+      max-width: 25%;
+      height: 20%;
       text-align: center;
       position: relative;
       animation: contentanim1 4s ease-out forwards;
@@ -398,18 +398,18 @@
   </main>
   
   <div class="content-second">
-    <p class="paragraph">
+    <p class="paragraph" id="anket">
       Burada ise anketimiz bulunmaktadır.
       Ankette proje ile nasıl hissetiğinizi ve düşüncelerinizi bizim görmemiz için atabilirsiniz.
       Bunu yapınca bizim websiteyi geliştirmemize neden olur.
       Ve Kaynakçaya da bakabilirsiniz bizim hangi website ve bilgileri kullandığımız için
       Herneyse hemen haberlere dönelim! 
     </p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-mcaaHfzqC5UPbGjzMz0C7v7CHU9Qx1w8emhHqgNwNbpHtg/viewform?usp=dialog" class="btn" target="_blank" id="anket" rel="noopener noreferrer">Ankete Giriniz?</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-mcaaHfzqC5UPbGjzMz0C7v7CHU9Qx1w8emhHqgNwNbpHtg/viewform?usp=dialog" class="btn" target="_blank" rel="noopener noreferrer">Ankete Giriniz?</a>
     <br><br>
-    <a href="https://read.bookcreator.com/Cd8I2Ld71dXWdMJdOR0s9BnWIG83/hacI0slcRN-NSnh5AYwrpA" class="btn">Su Sözlüğü</a>
+    <a href="https://read.bookcreator.com/Cd8I2Ld71dXWdMJdOR0s9BnWIG83/hacI0slcRN-NSnh5AYwrpA" class="btn" id="kaynak">Su Sözlüğü</a>
     <br><br>
-    <form action="/kaynakca" id="kaynak" method="post">
+    <form action="/kaynakca" method="post">
       <button class="btn" type="submit">Kullanılan Kaynaklar</button>
     </form>
     <br>
@@ -418,14 +418,14 @@
     </form>
   </div>
   <div class="content">
-    <p class="paragraph center">Burada ise bizim su ile ilgili videomuz</p>
+    <p class="paragraph center" id="video">Burada ise bizim su ile ilgili videomuz</p>
 
-<div class="center" id="video">
-  <button class="btn" id="openVideoBtn">Videoyu Aç</button>
+<div class="center">
+  <button class="btn" id="openVideoBtn" id="haber">Videoyu Aç</button>
 </div>
   </div>
 
-  <div class="content-second" id="haber">
+  <div class="content-second">
     <h1>Türkiye’de Kuraklık Tehdidi: Su Kaynakları Azalıyor.</h1>
     <p class="paragraph">
       Türkiye’de yağış rejimlerindeki değişim, artan sıcaklıklar ve su kaynaklarının azalması ciddi bir kuraklık riskini beraberinde getiriyor.
