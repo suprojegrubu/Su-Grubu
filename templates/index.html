@@ -56,19 +56,11 @@
       left: 0;
     }
 
-    @keyframes drip {
-      0% {
-        top: -60px;
-        opacity: 1;
-      }
-      95% {
-        opacity: 1;
-      }
-      100% {
-        top: 100vh;
-        opacity: 0;
-      }
-    }
+  @keyframes drip {
+    from { transform: translateY(-60px); opacity: 1; }
+    to { transform: translateY(100vh); opacity: 0; }
+  }
+
 
     @keyframes contentanim1 {
       from { left: 200%; }
@@ -90,8 +82,8 @@
       padding: 25px 40px;
       box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
       margin: 40px auto;
-      width: 800px;
-      height: 500px;
+      max-width: 90%;
+      height: auto;
       text-align: center;
       position: relative;
       animation: contentanim1 4s ease-out forwards;
@@ -192,31 +184,6 @@
   line-height: 1.7;
   font-size: 1.1rem;
   animation: contentanim2 .6s ease-out forwards;
-}
-
-.accordion {
-  background-color: #007acc;
-  color: white;
-  padding: 15px 20px;
-  border-radius: 15px;
-  margin: 15px 0;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background .2s;
-  font-size: 1.1rem;
-}
-
-.accordion:hover {
-  background-color: #005f99;
-}
-
-.panel {
-  display: none;
-  padding: 15px 20px;
-  margin-bottom: 20px;
-  background: white;
-  border: 2px solid #007acc;
-  border-radius: 15px;
 }
 
 
@@ -394,15 +361,15 @@
 
 
     
-  </style>
+ </style>
 </head>
-rel="noopener noreferrer">
 <body>
   <nav class="navbar">
   <a href="/">Ana Sayfa</a>
   <a href="#video">Video</a>
   <a href="#anket">Anket</a>
   <a href="#kaynak">Kaynakça</a>
+  <a href="#haber">Haberler</a>
   </nav>
 
   <div id="drip-container"></div>
@@ -412,7 +379,7 @@ rel="noopener noreferrer">
   </div>
 
   <main class="main-layout">
-    <img src="{{ url_for('static', filename='SuProje-Resim1.avif') }}" alt="Sol süsleme resmi" class="side-image">
+    <img src="{{ url_for('static', filename='SuProje-Resim1.avif') }}" alt="Sol süsleme resmi" loading="lazy" decoding="async" class="side-image">
 
     <div class="content">
       <p class="paragraph">Burada bizim yaptığımız diğer eserleri görebilirsiniz!</p>
@@ -427,7 +394,7 @@ rel="noopener noreferrer">
       </div>
     </div>
 
-    <img src="{{ url_for('static', filename='SuProjesi-Resim2.jpg') }}" alt="Sağ süsleme resmi" class="side-image">
+    <img src="{{ url_for('static', filename='SuProjesi-Resim2.jpg') }}" alt="Sağ süsleme resmi" loading="lazy" decoding="async" class="side-image">
   </main>
   
   <div class="content-second">
@@ -438,11 +405,11 @@ rel="noopener noreferrer">
       Ve Kaynakçaya da bakabilirsiniz bizim hangi website ve bilgileri kullandığımız için
       Herneyse hemen haberlere dönelim! 
     </p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-mcaaHfzqC5UPbGjzMz0C7v7CHU9Qx1w8emhHqgNwNbpHtg/viewform?usp=dialog" class="btn" target="_blank" rel="noopener noreferrer">Ankete Giriniz?</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-mcaaHfzqC5UPbGjzMz0C7v7CHU9Qx1w8emhHqgNwNbpHtg/viewform?usp=dialog" class="btn" target="_blank" id="anket" rel="noopener noreferrer">Ankete Giriniz?</a>
     <br><br>
     <a href="https://read.bookcreator.com/Cd8I2Ld71dXWdMJdOR0s9BnWIG83/hacI0slcRN-NSnh5AYwrpA" class="btn">Su Sözlüğü</a>
     <br><br>
-    <form action="/kaynakca" method="post">
+    <form action="/kaynakca" id="kaynak" method="post">
       <button class="btn" type="submit">Kullanılan Kaynaklar</button>
     </form>
     <br>
@@ -453,14 +420,12 @@ rel="noopener noreferrer">
   <div class="content">
     <p class="paragraph center">Burada ise bizim su ile ilgili videomuz</p>
 
-<div class="center">
+<div class="center" id="video">
   <button class="btn" id="openVideoBtn">Videoyu Aç</button>
 </div>
   </div>
 
-  <button class="accordion">Haberlerimiz</button>
-  <div class="panel">
-  <div class="content-second">
+  <div class="content-second" id="haber">
     <h1>Türkiye’de Kuraklık Tehdidi: Su Kaynakları Azalıyor.</h1>
     <p class="paragraph">
       Türkiye’de yağış rejimlerindeki değişim, artan sıcaklıklar ve su kaynaklarının azalması ciddi bir kuraklık riskini beraberinde getiriyor.
@@ -488,7 +453,7 @@ rel="noopener noreferrer">
   </div>
 
   <div class="main-img">
-    <img src="{{ url_for('static', filename='SuProje-Resim1.avif') }}" alt="Ana görsel" />
+    <img src="{{ url_for('static', filename='SuProje-Resim1.avif') }}" alt="Ana görsel" loading="lazy" decoding="async"/>
   </div>
 
   <div class="content-second">
@@ -573,7 +538,6 @@ rel="noopener noreferrer">
       Bunlar da değişmeden devam ederse 20 ila 30 yılda, yani 2050'lerde Türkiye’nin de su fakiri ülke konumuna düşmesi mümkün.
     </p>
   </div>
-</div>
 
 <div id="videoModal" class="video-overlay">
   <button class="close-video">X</button>
@@ -597,9 +561,7 @@ rel="noopener noreferrer">
     drop.style.transform = `scale(${1.5 + Math.random()})`;
     container.appendChild(drop);
   }
-</script>
-
-<script>
+  
   const openBtn = document.getElementById("openVideoBtn");
   const modal = document.getElementById("videoModal");
   const closeBtn = document.querySelector(".close-video");
@@ -622,16 +584,6 @@ rel="noopener noreferrer">
       video.pause();
     }
   });
-</script>
-
-<script>
-const acc = document.querySelectorAll(".accordion");
-acc.forEach(button => {
-  button.addEventListener("click", () => {
-    const panel = button.nextElementSibling;
-    panel.style.display = (panel.style.display === "block") ? "none" : "block";
-  });
-});
 </script>
 
 </body>
