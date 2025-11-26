@@ -7,11 +7,11 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/siir', methods=['POST'])
+@app.route('/siir', methods=['POST', 'GET'])
 def siir():
     return render_template('page2.html')
 
-@app.route('/hikaye', methods=['POST'])
+@app.route('/hikaye', methods=['POST', 'GET'])
 def hikaye():
     return render_template('page3.html')
 
