@@ -338,13 +338,14 @@
     .navbar {
   width: 100%;
   background: #007acc;
-  padding: 10px 20px;
+  padding: 1vw 2vw;
   display: flex;
   justify-content: center;
   gap: 25px;
   position: sticky;
   top: 0;
   z-index: 999;
+  font-size: clamp(14px, 1.5vw, 24px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
@@ -352,7 +353,7 @@
   color: white;
   font-weight: 600;
   text-decoration: none;
-  padding: 10px;
+  padding: 1vw 2vw;
 }
 
 .navbar a:hover {
@@ -368,8 +369,8 @@
   <a href="/">Ana Sayfa</a>
   <a href="#video">Video</a>
   <a href="#anket">Anket</a>
-  <a href="#kaynak">Kaynakça</a>
-  <a href="#haber">Haberler</a>
+  <a href="/hikaye">Hikayeler</a>
+  <a href="/siir">Şiirler</a>
   </nav>
 
   <div id="drip-container"></div>
@@ -407,7 +408,7 @@
     </p>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-mcaaHfzqC5UPbGjzMz0C7v7CHU9Qx1w8emhHqgNwNbpHtg/viewform?usp=dialog" class="btn" target="_blank" rel="noopener noreferrer">Ankete Giriniz?</a>
     <br><br>
-    <a href="https://read.bookcreator.com/Cd8I2Ld71dXWdMJdOR0s9BnWIG83/hacI0slcRN-NSnh5AYwrpA" class="btn" id="kaynak">Su Sözlüğü</a>
+    <a href="https://read.bookcreator.com/Cd8I2Ld71dXWdMJdOR0s9BnWIG83/hacI0slcRN-NSnh5AYwrpA" class="btn">Su Sözlüğü</a>
     <br><br>
     <form action="/kaynakca" method="post">
       <button class="btn" type="submit">Kullanılan Kaynaklar</button>
@@ -425,7 +426,7 @@
 </div>
   </div>
 
-  <div class="content-second" id="haber">
+  <div class="content-second">
     <h1>Türkiye’de Kuraklık Tehdidi: Su Kaynakları Azalıyor.</h1>
     <p class="paragraph">
       Türkiye’de yağış rejimlerindeki değişim, artan sıcaklıklar ve su kaynaklarının azalması ciddi bir kuraklık riskini beraberinde getiriyor.
