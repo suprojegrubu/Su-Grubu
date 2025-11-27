@@ -342,7 +342,8 @@
   background: #007acc;
   padding: 0.2rem 0.5rem; 
   display: flex;
-  justify-content: center;
+  justify-content: space-between; 
+  align-items: center; 
   gap: 20px;
   position: sticky;
   top: 0;
@@ -350,6 +351,7 @@
   font-size: clamp(14px, 1.3vw, 20px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
+
 
 .navbar a {
   color: white;
@@ -363,18 +365,31 @@
   text-decoration: underline;
 }
 
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-logo {
+  height: 40px;
+  width: auto;
+}
 
     
  </style>
 </head>
 <body>
-  <nav class="navbar">
-  <a href="/">Ana Sayfa</a>
-  <a href="#video">Video</a>
-  <a href="#anket">Anket</a>
-  <a href="/hikaye">Hikayeler</a>
-  <a href="/siir">Şiirler</a>
-  </nav>
+<nav class="navbar">
+  <img src="{{ url_for('static', filename='Favicon.png') }}" class="nav-logo" alt="Logo">
+  <div class="nav-links">
+    <a href="#video">Video</a>
+    <a href="#anket">Anket</a>
+    <a href="/">Ana Sayfa</a>
+    <a href="/hikaye">Hikayeler</a>
+    <a href="/siir">Şiirler</a>
+  </div>
+</nav>
+
 
   <div id="drip-container"></div>
 
