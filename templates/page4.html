@@ -80,27 +80,26 @@ body.dark .content {
       font-family: Monaco, "Courier New", "Lucida Console"
     }
     
-    .btn {
-      display: inline-block;
-      background-color: #007acc;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      box-shadow: 0 4px 8px rgba(0, 122, 204, 0.4);
-      cursor: pointer;
-      user-select: none;
-      
-      transition: transform 0.4s ease, background-color 0.3s ease;
-      transform: scale(1);
-    }
+.btn {
+  display: inline-block;
+  background-color: var(--btn-bg);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: none;
+}
 
-    .btn:hover {
-      transform: scale(1.2);
-      background-color: #005f99;
-    }
+.btn:hover {
+  background-color: var(--btn-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
 
     .btn2 {
       display: inline-block;
@@ -120,6 +119,8 @@ body.dark .content {
 
     .btn2:hover {
       background-color: #FF2B00;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
     }
 
     .content .btn2 {
@@ -218,7 +219,7 @@ background: var(--nav-bg);
     <a href="https://tr.euronews.com/green/2025/11/09/istanbul-ve-izmirde-su-krizi-derinlesiyor-neden-deniz-suyunu-aritmiyoruz" class="btn2">Kullanılan Kaynak (Haber 3)</a>
     <br>
     <br>
-    <a href="https://hthayat.haberturk.com/su-ile-ilgili-40-ilginc-gercek-1078885" class="btn2">Kullanılan Haber (Haber 4)</a>
+    <a href="https://www.halk54.com/sapanca-golunde-nesli-tukenmekte-olan-su-samuru-goruldu" class="btn2">Kullanılan Haber (Haber 4)</a>
     <br>
     <br>
     <a href="https://hthayat.haberturk.com/su-ile-ilgili-40-ilginc-gercek-1078885" class="btn2">Kullanılan Kaynak (Su ile İlgili İlginç Gerçekler)</a>
