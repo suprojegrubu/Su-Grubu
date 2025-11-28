@@ -432,15 +432,6 @@ background: var(--nav-bg);
  </style>
 </head>
 <body>
-
-<script>
-const savedTheme = localStorage.getItem("theme");
-const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
-  document.body.classList.add("dark");
-}
-</script>
   
 <nav class="navbar">
   <img src="{{ url_for('static', filename='Favicon.png') }}" class="nav-logo" alt="Logo">
@@ -636,6 +627,36 @@ if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
 
 
 <script>
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+    document.body.classList.add("dark");
+  }
+})();
+const toggleBtn = document.getElementById("darkToggle");
+toggleBtn.addEventListener("click", () => {
+  const isDark = document.body.classList.toggle("dark");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+  toggleBtn.textContent = isDark ? "☀️" : "🌙";
+});
+toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+const modal = document.getElementById("videoModal");
+const video = document.getElementById("videoPlayer");
+
+document.getElementById("openVideoBtn").onclick = () => {
+  modal.style.display = "flex";
+  video.currentTime = 0;
+  video.play();
+};
+document.querySelector(".close-video").onclick = closeModal;
+modal.onclick = (e) => { if (e.target === modal) closeModal(); };
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+function closeModal() {
+  modal.style.display = "none";
+  video.pause();
+}
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById('drip-container');
   const numDrops = 10;
@@ -650,55 +671,8 @@ document.addEventListener("DOMContentLoaded", () => {
     container.appendChild(d);
   }
 });
-
-const modal = document.getElementById("videoModal");
-const video = document.getElementById("videoPlayer");
-
-document.getElementById("openVideoBtn").onclick = () => {
-  modal.style.display = "flex";
-  video.currentTime = 0;
-  video.play();
-};
-
-document.querySelector(".close-video").onclick = closeModal;
-modal.onclick = (e) => { if (e.target === modal) closeModal(); };
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeModal();
-});
-
-function closeModal() {
-  modal.style.display = "none";
-  video.pause();
-}
-const toggleBtn = document.getElementById("darkToggle");
-
-const savedTheme = localStorage.getItem("theme");
-const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
-  document.body.classList.add("dark");
-}
-
-toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-
-  if (document.body.classList.contains("dark")) {
-    localStorage.setItem("theme", "dark");
-    toggleBtn.textContent = "☀️";
-  } else {
-    localStorage.setItem("theme", "light");
-    toggleBtn.textContent = "🌙";
-  }
-});
-
-if (document.body.classList.contains("dark")) {
-  toggleBtn.textContent = "☀️";
-} else {
-  toggleBtn.textContent = "🌙";
-}
-
 </script>
+
 
 </body>
 </html>
