@@ -285,36 +285,7 @@ toggleBtn.addEventListener("click", () => {
   toggleBtn.textContent = isDark ? "☀️" : "🌙";
 });
 toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
-const modal = document.getElementById("videoModal");
-const video = document.getElementById("videoPlayer");
-
-document.getElementById("openVideoBtn").onclick = () => {
-  modal.style.display = "flex";
-  video.currentTime = 0;
-  video.play();
-};
-document.querySelector(".close-video").onclick = closeModal;
-modal.onclick = (e) => { if (e.target === modal) closeModal(); };
-document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
-function closeModal() {
-  modal.style.display = "none";
-  video.pause();
-}
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById('drip-container');
-  const numDrops = 10;
-
-  for (let i = 0; i < numDrops; i++) {
-    const d = document.createElement("div");
-    d.className = "drop";
-    d.style.left = `${Math.random() * 100}vw`;
-    d.style.animationDuration = `${1.5 + Math.random() * 3}s`;
-    d.style.animationDelay = `${Math.random() * 2.5}s`;
-    d.style.transform = `scale(${1.5 + Math.random()})`;
-    container.appendChild(d);
-  }
-});
-</script>
+  </script>
 
 </body>
 </html>
