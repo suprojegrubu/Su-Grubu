@@ -180,13 +180,15 @@ body.dark {
 
 
 .content-second {
-  background-color: var(--bg-color);
+  background-color: #FFFFFF;
   border: 4px solid #00a0ff;
   border-radius: 25px;
   padding: 30px;
   margin: 40px auto;
   max-width: 1000px;
   width: 95%;
+  z-index: 2;
+  color: var(--text-color);
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
   animation: contentanim1 1s ease-out forwards;
   line-height: 1.8;
@@ -194,13 +196,15 @@ body.dark {
 
 
 .content {
-  background-color: var(--bg-color);
+  background-color: #FFFFFF;
   border: 4px solid #00a0ff;
   border-radius: 25px;
   padding: 25px 30px;
   margin: 30px auto;
   max-width: 900px;           
-  width: 100%;               
+  width: 100%;
+  z-index: 2;
+  color: var(--text-color);
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
   line-height: 1.7;
   font-size: 1.1rem;
@@ -649,17 +653,17 @@ toggleBtn.addEventListener("click", () => {
 
   if (document.body.classList.contains("dark")) {
     localStorage.setItem("theme", "dark");
-    toggleBtn.textContent = "☀️ Açık Tema";
+    toggleBtn.textContent = "☀️";
   } else {
     localStorage.setItem("theme", "light");
-    toggleBtn.textContent = "🌙 Karanlık Tema";
+    toggleBtn.textContent = "🌙";
   }
 });
 
 if (document.body.classList.contains("dark")) {
-  toggleBtn.textContent = "☀️ Açık Tema";
+  toggleBtn.textContent = "☀️";
 } else {
-  toggleBtn.textContent = "🌙 Karanlık Tema";
+  toggleBtn.textContent = "🌙";
 }
 
 </script>
