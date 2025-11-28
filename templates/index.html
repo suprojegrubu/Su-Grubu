@@ -32,6 +32,7 @@ body.dark {
 
   --btn-bg: #1F6FEB;
   --btn-hover: #388BFD;
+  scroll-padding-top: 80px;
 }
 
     
@@ -148,10 +149,11 @@ body.dark {
       z-index: 2;
     }
 
-    @keyframes scrollBackground {
-      0% { background-position: 0 0; }
-      100% { background-position: -1000px 0; }
-    }
+@keyframes scrollBackground {
+  0% { background-position-x: 0; }
+  100% { background-position-x: -200%; }
+}
+
 
     .hero-background .overlay {
       background: rgba(255,255,255,0.85);
@@ -184,7 +186,7 @@ body.dark {
     }
 
     .side-image {
-      width: 200px;
+      max-width: 40vw;
       object-fit: cover;
       border-radius: 20px;
       border: 3px solid var(--border-color);
@@ -407,12 +409,6 @@ background: var(--nav-bg);
   transition: background 1s, color 1s;
 }
 
-:root {
-  scroll-padding-top: 80px;
-}
-
-
-
 .navbar a:hover {
   background: rgba(255,255,255,0.18);
 }
@@ -428,10 +424,23 @@ background: var(--nav-bg);
   width: auto;
 }
 
+.nav-links button {
+  margin-left: 10px;
+}
     
  </style>
 </head>
 <body>
+
+<script>
+const savedTheme = localStorage.getItem("theme");
+const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+  document.body.classList.add("dark");
+}
+</script>
+  
 <nav class="navbar">
   <img src="{{ url_for('static', filename='Favicon.png') }}" class="nav-logo" alt="Logo">
   <div class="nav-links">
