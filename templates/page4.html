@@ -137,6 +137,52 @@ body.dark .content {
         font-size: 1em;
       }
     }
+
+  	  
+    .navbar {
+  width: 100%;
+background: var(--nav-bg);
+  padding: 0.2rem 0.5rem; 
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  font-size: clamp(14px, 1.3vw, 20px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+.navbar a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.2rem 0.5rem;
+  border-radius: 8px;
+  transition: background 1s, color 1s;
+}
+
+.navbar a:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.nav-logo {
+  height: 40px;
+  width: auto;
+}
+
+.nav-links button {
+  margin-left: 10px;
+}
+    
   </style>
 </head>
 <body>
@@ -172,6 +218,9 @@ body.dark .content {
     <a href="https://tr.euronews.com/green/2025/11/09/istanbul-ve-izmirde-su-krizi-derinlesiyor-neden-deniz-suyunu-aritmiyoruz" class="btn2">Kullanılan Kaynak (Haber 3)</a>
     <br>
     <br>
+    <a href="https://hthayat.haberturk.com/su-ile-ilgili-40-ilginc-gercek-1078885" class="btn2">Kullanılan Haber (Haber 4)</a>
+    <br>
+    <br>
     <a href="https://hthayat.haberturk.com/su-ile-ilgili-40-ilginc-gercek-1078885" class="btn2">Kullanılan Kaynak (Su ile İlgili İlginç Gerçekler)</a>
   </div>
 
@@ -192,35 +241,6 @@ toggleBtn.addEventListener("click", () => {
   toggleBtn.textContent = isDark ? "☀️" : "🌙";
 });
 toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
-const modal = document.getElementById("videoModal");
-const video = document.getElementById("videoPlayer");
-
-document.getElementById("openVideoBtn").onclick = () => {
-  modal.style.display = "flex";
-  video.currentTime = 0;
-  video.play();
-};
-document.querySelector(".close-video").onclick = closeModal;
-modal.onclick = (e) => { if (e.target === modal) closeModal(); };
-document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
-function closeModal() {
-  modal.style.display = "none";
-  video.pause();
-}
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById('drip-container');
-  const numDrops = 10;
-
-  for (let i = 0; i < numDrops; i++) {
-    const d = document.createElement("div");
-    d.className = "drop";
-    d.style.left = `${Math.random() * 100}vw`;
-    d.style.animationDuration = `${1.5 + Math.random() * 3}s`;
-    d.style.animationDelay = `${Math.random() * 2.5}s`;
-    d.style.transform = `scale(${1.5 + Math.random()})`;
-    container.appendChild(d);
-  }
-});
 </script>
   
 </body>
