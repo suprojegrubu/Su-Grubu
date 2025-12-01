@@ -498,7 +498,7 @@ background: var(--nav-bg);
     <p class="paragraph center">Su ile ilgili Videomuz/Şarkımız</p>
 
 <div class="center">
-  <button class="btn" id="openVideoBtn">Videoyu Aç</button>
+  <button class="btn" id="openVideoBtn2">Videoyu Aç</button>
 </div>
   </div>
 
@@ -662,6 +662,11 @@ const modal = document.getElementById("videoModal");
 const video = document.getElementById("videoPlayer");
 
 document.getElementById("openVideoBtn").onclick = () => {
+  modal.style.display = "flex";
+  video.currentTime = 0;
+  video.play();
+};
+document.getElementById("openVideoBtn2").onclick = () => {
   modal.style.display = "flex";
   video.currentTime = 0;
   video.play();
