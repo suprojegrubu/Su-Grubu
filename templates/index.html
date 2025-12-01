@@ -436,8 +436,8 @@ background: var(--nav-bg);
 <nav class="navbar">
   <img src="{{ url_for('static', filename='Favicon.png') }}" class="nav-logo" alt="Logo">
   <div class="nav-links">
-    <a href="#video">Video</a>
-    <a href="#anket">Anket</a>
+    <a id="openVideoBtn">Video</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-mcaaHfzqC5UPbGjzMz0C7v7CHU9Qx1w8emhHqgNwNbpHtg/viewform?usp=dialog" class="btn" target="_blank" rel="noopener noreferrer">Anket</a>
     <a href="/">Ana Sayfa</a>
     <a href="/hikaye">Hikayeler</a>
     <a href="/siir">Şiirler</a>
@@ -475,7 +475,7 @@ background: var(--nav-bg);
   </main>
   
   <div class="content-second">
-    <p class="paragraph" id="anket">
+    <p class="paragraph" >
       Burada ise anketimiz bulunmaktadır.
       Ankette proje ile nasıl hissetiğinizi ve düşüncelerinizi bizim görmemiz için atabilirsiniz.
       Bunu yapınca bizim websiteyi geliştirmemize neden olur.
@@ -494,8 +494,8 @@ background: var(--nav-bg);
       <button class="btn" type="submit">İlginç Gerçekler (Su ile ilgili)</button>
     </form>
   </div>
-  <div class="content" id="video">
-    <p class="paragraph center">Burada ise bizim su ile ilgili videomuz</p>
+  <div class="content">
+    <p class="paragraph center">Su ile ilgili Videomuz/Şarkımız</p>
 
 <div class="center">
   <button class="btn" id="openVideoBtn">Videoyu Aç</button>
