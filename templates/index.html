@@ -218,9 +218,9 @@ animation:
 
 @keyframes floaty {
   0%   { transform: translateY(0); }
-  33%  { transform: translateY(6px); }
+  33%  { transform: translateY(12px); }
   66% { transform: translateY(0); }
-  100% { transform: translateY(-6px); }
+  100% { transform: translateY(-12px); }
 }
 
 
@@ -239,7 +239,9 @@ animation:
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
   line-height: 1.7;
   font-size: 1.1rem;
-  animation: contentanim2 .6s ease-out forwards;
+  animation:
+    contentanim2 .6s ease-out forwards,
+    floaty 5s ease-in-out infinite;
 }
 
 body.dark .content,
