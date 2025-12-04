@@ -196,12 +196,6 @@ body.dark {
       flex-shrink: 0;
     }
 
-.content, .content-second {
-  --floaty-offset: 0px;
-  transform: translateY(var(--floaty-offset));
-  transition: transform 0.3s ease;
-}
-
 .content-second {
   position: relative;
   border-radius: 25px;
@@ -217,7 +211,6 @@ body.dark {
   line-height: 1.8;
   animation:
     contentanim1 1s ease-out forwards,
-    floaty 5s ease-in-out infinite;
 }
 
 .content {
@@ -235,20 +228,11 @@ body.dark {
   font-size: 1.1rem;
   animation:
     contentanim2 .6s ease-out forwards,
-    floaty 5s ease-in-out infinite;
-}
-
-@keyframes floaty {
-  0%   { --floaty-offset: 0px; }
-  25%  { --floaty-offset: 12px; }
-  50%  { --floaty-offset: 0px; }
-  75%  { --floaty-offset: -12px; }
-  100% { --floaty-offset: 0px; }
 }
 
 .content:hover,
 .content-second:hover {
-  transform: translateY(var(--floaty-offset)) scale(1.1, 1.2);
+  transform: translateY(scale(1.1, 1.2));
 }
 
 
