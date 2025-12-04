@@ -196,6 +196,11 @@ body.dark {
       flex-shrink: 0;
     }
 
+.content, .content-second {
+  --floaty-offset: 0px;
+  transform: translateY(var(--floaty-offset));
+  transition: transform 0.3s ease;
+}
 
 .content-second {
   position: relative;
@@ -210,28 +215,16 @@ body.dark {
   border: 4px solid var(--border-color);
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
   line-height: 1.8;
- transition: transform 0.3s ease;
-animation:
-  contentanim1 1s ease-out forwards,
-  floaty 5s ease-in-out infinite;
+  animation:
+    contentanim1 1s ease-out forwards,
+    floaty 5s ease-in-out infinite;
 }
-
-@keyframes floaty {
-  0%   { transform: translateY(0); }
-  25%  { transform: translateY(12px); }
-  50% { transform: translateY(0); }
-  75% { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
-}
-
-
-
 
 .content {
   border-radius: 25px;
   padding: 25px 30px;
   margin: 30px auto;
-  max-width: 900px;           
+  max-width: 900px;
   width: 100%;
   z-index: 2;
   color: var(--text-color);
@@ -240,23 +233,24 @@ animation:
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
   line-height: 1.7;
   font-size: 1.1rem;
-  transition: transform 0.3s ease;
   animation:
     contentanim2 .6s ease-out forwards,
     floaty 5s ease-in-out infinite;
 }
 
-body.dark .content,
-body.dark .content-second {
-  background-color: var(--card-bg);
-  border-color: var(--border-color);
-  color: var(--text-color);
+@keyframes floaty {
+  0%   { --floaty-offset: 0px; }
+  25%  { --floaty-offset: 12px; }
+  50%  { --floaty-offset: 0px; }
+  75%  { --floaty-offset: -12px; }
+  100% { --floaty-offset: 0px; }
 }
 
-    .content:hover, .content-second:hover {
-      animation-play-state: paused;
-      transform: scale(1.1, 1.2);
-    }
+.content:hover,
+.content-second:hover {
+  transform: translateY(var(--floaty-offset)) scale(1.1, 1.2);
+}
+
 
     .paragraph {
       font-size: 1.1em;
