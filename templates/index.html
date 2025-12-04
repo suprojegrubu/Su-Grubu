@@ -492,10 +492,14 @@ background: var(--nav-bg);
     </form>
   </div>
   <div class="content">
-    <p class="paragraph center">Su ile ilgili Videomuz/Şarkımız</p>
+    <p class="paragraph center">Su ile ilgili Videomuz/Şarkımız ve Klibimiz.</p>
 
 <div class="center">
   <button class="btn" id="openVideoBtn2">Videoyu Aç</button>
+</div>
+  
+<div class="center">
+  <button class="btn" id="openVideoBtn3">Klibi Aç</button>
 </div>
   </div>
 
@@ -638,6 +642,15 @@ background: var(--nav-bg);
   </video>
 </div>
 
+<div id="klipModal" class="video-overlay">
+  <button class="close-video">X</button>
+  
+  <video controls id="klipPlayer" class="video-fullscreen">
+    <source src="https://file.garden/aSAGHW7wGDOKPZAQ/Su%20Videosu.mp4" type="video/mp4">
+    Tarayıcınız bu videoyu desteklemiyor.
+  </video>
+</div>
+
 
 <script>
 (function() {
@@ -657,6 +670,8 @@ toggleBtn.addEventListener("click", () => {
 toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
 const modal = document.getElementById("videoModal");
 const video = document.getElementById("videoPlayer");
+const klip = document.getElementById("klipPlayer");
+const kmodal = document.getElementById("klipModal")
 
 document.getElementById("openVideoBtn").onclick = () => {
   modal.style.display = "flex";
@@ -667,6 +682,11 @@ document.getElementById("openVideoBtn2").onclick = () => {
   modal.style.display = "flex";
   video.currentTime = 0;
   video.play();
+};
+document.getElementById("openVideoBtn3").onclick = () => {
+  modal.style.display = "flex";
+  klip.currentTime = 0;
+  klip.play();
 };
 document.querySelector(".close-video").onclick = closeModal;
 modal.onclick = (e) => { if (e.target === modal) closeModal(); };
