@@ -225,7 +225,7 @@ body.dark {
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
   line-height: 1.7;
   font-size: 1.1rem;
-  animation: contentanim2 .6s ease-out forward;
+  animation: contentanim2 .6s ease-out forwards;
 }
     
 body.dark .content,
@@ -634,7 +634,8 @@ background: var(--nav-bg);
   </div>
   
 <div id="videoModal" class="video-overlay">
-  <button class="close-video">X</button>
+  <button id="closeVideo" class="close-video">X</button>
+
 
   <video controls id="videoPlayer" class="video-fullscreen">
     <source src="https://file.garden/aSAGHW7wGDOKPZAQ/video.mp4" type="video/mp4">
@@ -643,7 +644,8 @@ background: var(--nav-bg);
 </div>
 
 <div id="klipModal" class="video-overlay">
-  <button class="close-video">X</button>
+  <button id="closeKlip" class="close-video">X</button>
+
   
   <video controls id="klipPlayer" class="video-fullscreen">
     <source src="https://file.garden/aSAGHW7wGDOKPZAQ/Su%20Videosu.mp4" type="video/mp4">
@@ -684,16 +686,25 @@ document.getElementById("openVideoBtn2").onclick = () => {
   video.play();
 };
 document.getElementById("openVideoBtn3").onclick = () => {
-  modal.style.display = "flex";
+  kmodal.style.display = "flex";
   klip.currentTime = 0;
   klip.play();
 };
+document.getElementById("closeVideo").onclick = closeVideoModal;
+document.getElementById("closeKlip").onclick = closeKlipModal;
 document.querySelector(".close-video").onclick = closeModal;
-modal.onclick = (e) => { if (e.target === modal) closeModal(); };
-document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
-function closeModal() {
+modal.onclick = (e) => { if (e.target === modal) closeVideoModal(); };
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeVideoModal(); });
+kmodal.onclick = (e) => { if (e.target === kmodal) closeKlipModal(); };
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeKlipModal(); });
+function closeVideoModal() {
   modal.style.display = "none";
   video.pause();
+}
+
+function closeKlipModal() {
+  kmodal.style.display = "none";
+  klip.pause();
 }
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById('drip-container');
