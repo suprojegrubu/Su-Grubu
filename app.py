@@ -15,11 +15,11 @@ def siir():
 def hikaye():
     return render_template('page3.html')
 
-@app.route('/kaynakca', methods=['POST'])
+@app.route('/kaynakca', methods=['POST', 'GET'])
 def kaynakca():
     return render_template('page4.html')
 
-@app.route('/ilginc-gercekler', methods=['POST'])
+@app.route('/ilginc-gercekler', methods=['POST', 'GET'])
 def ilginc_gercekler():
     return render_template('page5.html')
 
