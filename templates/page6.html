@@ -52,7 +52,7 @@ body.dark {
   border-radius: 25px;
   padding: 25px 30px;
   margin: 30px auto;
-  max-width: 900px;           
+  max-width: 1500px;           
   width: 100%;
   z-index: 2;
   color: var(--text-color);
@@ -76,9 +76,13 @@ body.dark {
   background-image: url("{{ url_for('static', filename='yourimage.jpg') }}");
   background-size: cover;
   background-position: center;
-  filter: blur(15px) brightness(0.8); 
+  filter: blur(8px) brightness(0.8); 
   z-index: -1;  
   transform: scale(1.2); 
+}
+
+.content:hover {
+  filter: blur(2px) brightness(0.8); 
 }
 
 body.dark .content {
