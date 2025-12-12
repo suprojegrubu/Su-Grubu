@@ -76,13 +76,9 @@ body.dark {
   background-image: url("{{ url_for('static', filename='yourimage.jpg') }}");
   background-size: cover;
   background-position: center;
-  filter: blur(8px) brightness(0.8); 
+  filter: blur(2px) brightness(0.8); 
   z-index: -1;  
   transform: scale(1.2); 
-}
-
-.content:hover {
-  filter: blur(2px) brightness(0.8); 
 }
 
 body.dark .content {
