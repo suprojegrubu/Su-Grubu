@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>İlginç Su Hayvanları</title>
+  <link rel="icon" href="{{ url_for('static', filename='Favicon.png') }}" type="image/png">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='Favicon.png') }}" type="image/png">
+  <style>
+
+    
+:root {
+  --bg-color: #E7F4FF;
+  --body-color: #8FEBFF;
+  --text-color: #1a1a1a;       
+  --card-bg: #ffffff;
+  --border-color: #3BA9F4;   
+  --nav-bg: #0074C7;         
+
+  --btn-bg: #0094E8;
+  --btn-hover: #0074C7;
+}
+
+body.dark {
+  --bg-color: #0D1117;
+  --body-color: #0D1117;
+  --text-color: #E6EDF3;
+  --card-bg: #161B22;
+  --border-color: #2997D8;
+  --nav-bg: #0A326A;
+
+  --btn-bg: #1F6FEB;
+  --btn-hover: #388BFD;
+  scroll-padding-top: 80px;
+}
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--body-color);
+      margin: 0;
+      color: var(--text-color);
+      overflow-x: hidden; 
+    }
+
+.content {
+  border-radius: 25px;
+  padding: 25px 30px;
+  margin: 30px auto;
+  max-width: 900px;           
+  width: 100%;
+  z-index: 2;
+  color: var(--text-color);
+  background-color: var(--card-bg);
+  border: 4px solid var(--border-color);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+    h1, h3, h2 {
+      color: var(--btn-bg);
+      opacity: 0;
+      animation: fadeIn 0.75s forwards;
+    }
+
+    h1 { animation-delay: 0.5s; }
+    p:nth-of-type(1) { animation-delay: 1s; }
+    p:nth-of-type(2) { animation-delay: 1.25s; }
+    p:nth-of-type(3) { animation-delay: 1.5s; }
+    p:nth-of-type(4) { animation-delay: 1.75s; }
+    p:nth-of-type(5) { animation-delay: 2s; }
+    p:nth-of-type(6) { animation-delay: 2.25s; }
+    p:nth-of-type(7) { animation-delay: 2.5s; }
+    p:nth-of-type(8) { animation-delay: 2.75s; }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.1em;
+    }
+    
+  h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight:300;
+  letter-spacing: 2px;
+  font-size:48px;
+  text-align: center;
+} 
+.btn {
+  display: inline-block;
+  background-color: var(--btn-bg);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: none;
+}
+
+.btn:hover {
+  background-color: var(--btn-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+    @media (max-width: 768px) {
+      .content {
+        padding: 20px 15px;
+        margin: 30px 20px 60px 20px;
+      }
+
+      h3 {
+        font-size: 1em;
+      }
+    }
+
+    .navbar {
+  width: 100%;
+background: var(--nav-bg);
+  padding: 0.2rem 0.5rem; 
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  font-size: clamp(14px, 1.3vw, 20px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+.navbar a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.2rem 0.5rem;
+  border-radius: 8px;
+  transition: background 1s, color 1s;
+}
+
+.navbar a:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.nav-logo {
+  height: 40px;
+  width: auto;
+}
+
+.nav-links button {
+  margin-left: 10px;
+}
+    
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+  <img src="{{ url_for('static', filename='Favicon.png') }}" class="nav-logo" alt="Logo">
+  <div class="nav-links">
+    <a href="/">Ana Sayfa</a>
+    <a href="/siir">Şiirler</a>
+    <a href="/hikaye">Hikayeler</a>
+    <button id="darkToggle" class="btn" style="padding: 5px 12px; font-size: 0.9rem;">
+      🌙
+    </button>
+
+  </div>
+</nav>
+
+  <div class="content">
+    <form action="/" method="post">
+      <button class="btn" type="submit">Geri Dön?</button>
+    </form>
+  </div>
+
+  <div class="content">
+      <h1>AB-ı ruy</h1>
+      <p>Ab gibi akarsın gönül şahrasında</p>
+      <p>Her katre bir sırdır dilden duada</p>
+  </div>
+
+  <script>
+(function() {
+  const savedTheme = localStorage.getItem("theme");
+  const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+    document.body.classList.add("dark");
+  }
+})();
+const toggleBtn = document.getElementById("darkToggle");
+toggleBtn.addEventListener("click", () => {
+  const isDark = document.body.classList.toggle("dark");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+  toggleBtn.textContent = isDark ? "☀️" : "🌙";
+});
+toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+  </script>
+
+</body>
+</html>
