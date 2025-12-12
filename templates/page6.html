@@ -56,12 +56,52 @@ body.dark {
   width: 100%;
   z-index: 2;
   color: var(--text-color);
-  background-color: var(--card-bg);
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(5px);
   border: 4px solid var(--border-color);
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
   line-height: 1.7;
   font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
 }
+
+.content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("{{ url_for('static', filename='yourimage.jpg') }}");
+  background-size: cover;
+  background-position: center;
+  filter: blur(15px) brightness(0.8); 
+  z-index: -1;  
+  transform: scale(1.2); 
+}
+
+body.dark .content {
+  background-color: rgba(22, 27, 34, 0.45);
+}
+
+.bg1::before {
+  background-image: url("{{ url_for('static', filename='images/650.webp') }}");
+}
+
+.bg2::before {
+  background-image: url("{{ url_for('static', filename='images/1600.webp') }}");
+}
+
+.bg3::before {
+  background-image: url("{{ url_for('static', filename='images/1601.webp') }}");
+}
+
+.bg4::before {
+  background-image: url("{{ url_for('static', filename='images/1602.webp') }}");
+}
+
+
 
     h1, p, h2 {
       color: var(--btn-bg);
@@ -194,7 +234,7 @@ background: var(--nav-bg);
     </form>
   </div>
 
-  <div class="content">
+  <div class="content bg1">
       <h1>YAPRAK KOYUNU</h1>
       <p>1993 yılında Japon adası Kuroshima'nın sularında keşfedilen Costasiella kuroshimae (Yaprak koyunu);
         Japonya, Endonezya ve Filipinler çevresinde bulunan, 5 mm'ye kadar büyüyebilen sevimli minik bir deniz canlısıdır.
@@ -209,21 +249,30 @@ background: var(--nav-bg);
         Yaprak koyunlarının insanlara veya diğer deniz canlılarına karşı zehirli olduğunu gösteren hiçbir kanıt yoktur. </p>
   </div>
 
-  <div class="content">
-      <h1>YAPRAK KOYUNU</h1>
-      <p>1993 yılında Japon adası Kuroshima'nın sularında keşfedilen Costasiella kuroshimae (Yaprak koyunu);
-        Japonya, Endonezya ve Filipinler çevresinde bulunan, 5 mm'ye kadar büyüyebilen sevimli minik bir deniz canlısıdır.
-        Bu benzersiz hayvanın büyüleyici yanı, dünyada fotosentez yapabilen tek deniz canlısı olmasıdır. Nasıl mı? 
-        Sevimli deniz canlısı algleri tükettiğinde, kloroplastları emerler ve bu sayede kendi vücutlarına kloroplastları dahil ederler.
-        Filipinler'deki birçok dalgıç, bu ilginç deniz canlısını, sevimli çizgi film karakteri Shaun the Sheep'e benzetmiştir. </p>
+  <div class="content bg2">
+      <h1>Güneş Balığı / Mola</h1>
+      <p>Güneş Balığı veya Mola olarak bilinen balıklar, doğduklarında sahip oldukları sırt yüzgeci asla büyümediği için kurşun şeklinde gelişirler. Devasa hayvanlar olgunlaştıkça kendilerini katlayarak, bir dümeni anımsatan yuvarlak bir kemere dönüşürler. "Mola," Latince'de "mermer taşı" anlamına gelir ve okyanus güneş balığının nispeten dairesel şeklini tanımlar. Gümüş bir renge sahiptirler ve pürüzlü bir cilt dokuları vardır. </p>
     
-      <p>Bu deniz omurgasızının, siyah boncuk gibi gözleri, koyun kulaklarına veya böcek antenlerine benzeyen siyah uçlu rinoforları, beyaz renkli baş kısmından dışarıya doğru çıkan yeşil cerataları bulunmaktadır.
-         Deniz salyangozunun cerataları, aloe vera bitkisi veya zebra sukulenti gibi yaprak benzeri uzantılar gibidir.
-         Genellikle pembe, mor veya beyaz uçlara sahiptirler ve içlerinde sindirim bezinin dalları bulunur.
-        Rinoforlar, suyun kimyasal sinyallerini alarak deniz salyangozunun koku alma yetisini sağlar ve besin kaynaklarını bulmasına yardımcı olur.
-        Yaprak koyunlarının insanlara veya diğer deniz canlılarına karşı zehirli olduğunu gösteren hiçbir kanıt yoktur. </p>
+      <p>Molalar, dünya çapında ılıman ve tropikal okyanuslarda bulunurlar. Güneşlenirken yüzeye yakın görünürler ve geniş sırt yüzgeçleri suyun üzerine çıktığında, sıklıkla köpekbalıklarıyla karıştırılırlar. Molalar, kemikli balıkların en ağırıdır. Tercih ettikleri yiyecekler genellikle denizanasıdır, ancak zaman zaman küçük balıklar, büyük miktarlarda zooplankton ve alg ile de beslenirler. Olgun okyanus güneş balığının ortalama uzunluğu 1,8 metre ve yüzgeçten yüzgecine uzunluğu 2,5 metredir. </p>
+
+      <p>İnsanlar için zararsızdırlar, ancak çok meraklı olabilirler ve sık sık dalgıçlara yaklaşırlar. Popülasyonları tehlikede kabul edilir. </p>
   </div>
 
+  <div class="content bg4">
+      <h1>DAMLA BALIĞI / BLOBFISH</h1>
+      <p>Damla balıkları olarak da adlandırılan Blobfish, ortalama 30 santimetreye kadar büyüyebilen, genellikle Avusturalya'nın güneydoğu sularında bulunan, okyanusun karanlık ve soğuk bölgelerinde, basıncın çok fazla olduğu noktalarda yaşayabilen ilginç bir canlıdır. Beslenmeleri deniz kestanelerine, kabuklu deniz hayvanlarına ve deniz kalemlerine dayanır.</p>
+    
+      <p>Kafa ve jöle benzeri vücut dokusunun olağandışı morfolojisi, damla balıklarının 2013’te dünyanın en çirkin hayvanı olarak seçilmesine neden olmuştur.</p>
+
+      <p>Vücudunda çok az miktarda kas bulunmasından ötürü bu şekilde tuhaf bir görünüme sahiptir ve yüzmek için enerji harcaması gerekmez. Düşük yoğunluklu vücudu sayesinde, okyanus tabanının üzerinde rahatlıkla süzülür. </p>
+  </div>
+
+  <div class="content bg3">
+      <h1>AKSOLOTL SEMENDERİ (AMBYSTOMA MEXİCANUM)</h1>
+      <p>Aksolotllar Ambystoma cinsine bağlı bir semender türüdür. Bu türün larvaları başkalaşım geçirmezler, bu nedenden yetişkinleri de suda yaşar ve solungaçları vardır. Bu türün habitatı asıl olarak Meksika Chalco Gölü ve Meksika'nın dağ gölleridir.</p>
+    
+      <p>Aksolotllar, uzuvları, solungaçları, gözleri ve beyinlerinin bölümlerini yeniden oluşturabilme yeteneğine sahip oldukları gibi en büyük genom (insandan 10 kat büyük) dizilimine de sahiptirler ve bu sebeple de bilimsel araştırmalarda yaygın olarak kullanılırlar. Göz kapakları olmayan nadir canlılardandır. Suyun içinde de dışında da nefes alabilen Aksolotl semenderi, birçok ülkede ev hayvanı olarak da yetiştirilmektedir.</p>
+  </div>
   <script>
 (function() {
   const savedTheme = localStorage.getItem("theme");
