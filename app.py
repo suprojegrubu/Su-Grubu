@@ -24,7 +24,7 @@ def ilginc_gercekler():
     return render_template('page5.html')
 
 @app.route('/ilginc-su-hayvanlari', methods=['POST', 'GET'])
-def ilginc_gercekler():
+def ilginc_su_hayvanlari():
     return render_template('page6.html')
 
 if __name__ == '__main__':
