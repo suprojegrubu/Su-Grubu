@@ -324,6 +324,12 @@ body.dark .content-second {
       font-family: Monaco, "Courier New", "Lucida Console"
     }
 
+    .value {
+      color: var(--text-color);
+      text-align: left;
+      font-family: "Times New Roman", "Courier New", "Lucida Console"
+    }
+
     @media (max-width: 480px) {
       .hero-background {
         padding: 30px 15px;
@@ -445,8 +451,8 @@ background: var(--nav-bg);
   
 <nav class="navbar">
   <img src="{{ url_for('static', filename='Favicon.png') }}" class="nav-logo" alt="Su Logosu/Favicon">
-  <div id="site-stats" style="color:white; font-size:14px;">
-  Şu anda sitede: <span id="onlineCount">0</span> kişi
+  <div id="site-stats" class="value">
+  Aktif Ziyaretçi Sayısı: <span id="onlineCount">0</span> kişi
   </div>
   <div class="nav-links">
     <a href="#" id="openVideoBtn">Video</a>
