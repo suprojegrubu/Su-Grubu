@@ -682,7 +682,6 @@ background: var(--nav-bg);
 </div>
   
 <script>
-
 function getUserId() {
   let id = localStorage.getItem("uid");
   if (!id) {
@@ -694,22 +693,6 @@ function getUserId() {
 
 const USER_ID = getUserId();
 
-(function uniqueCounter() {
-  const COUNT_KEY = "site_unique_count";
-
-  if (!localStorage.getItem("counted")) {
-    let count = parseInt(localStorage.getItem(COUNT_KEY) || "0", 10);
-    count++;
-    localStorage.setItem(COUNT_KEY, count);
-    localStorage.setItem("counted", "true");
-  }
-
-  const uniqueEl = document.getElementById("uniqueCount");
-  if (uniqueEl) {
-    uniqueEl.textContent = localStorage.getItem(COUNT_KEY);
-  }
-})();
-
 function heartbeat() {
   fetch("/track-user", {
     method: "POST",
@@ -718,22 +701,24 @@ function heartbeat() {
   }).catch(() => {});
 }
 
-function fetchOnline() {
+
+function fetchStats() {
   fetch("/stats")
     .then(r => r.json())
     .then(d => {
-      const onlineEl = document.getElementById("onlineCount");
-      if (onlineEl) onlineEl.textContent = d.online;
+      document.getElementById("onlineCount").textContent = d.online;
+      document.getElementById("uniqueCount").textContent = d.unique;
     })
     .catch(() => {});
 }
 
 heartbeat();
-fetchOnline();
+fetchStats();
 
 setInterval(heartbeat, 2000);
-setInterval(fetchOnline, 2000);
+setInterval(fetchStats, 2000);
 </script>
+
 
 
  
