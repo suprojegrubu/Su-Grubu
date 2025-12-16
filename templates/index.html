@@ -674,7 +674,14 @@ background: var(--nav-bg);
   </video>
 </div>
 
-
+<?php
+  header('Access-Control-Allow-Origin: *');
+  header('Accept: */*');
+  header('Access-Control-Allow-Credentials: TRUE');
+  header('Access-Control-Allow-Methods: GET,HEAD,OPTIONS,POST,PUT');
+  header("Access-Control-Allow-Headers: Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+  ?>
+  
 <script>
 (function() {
   const savedTheme = localStorage.getItem("theme");
