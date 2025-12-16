@@ -66,23 +66,23 @@ def index():
     )
     return response
 
-@app.route('/siir')
+@app.route('/siir', methods=["POST", "GET"])
 def siir():
     return render_template('page2.html')
 
-@app.route('/hikaye')
+@app.route('/hikaye', methods=["POST", "GET"])
 def hikaye():
     return render_template('page3.html')
 
-@app.route('/kaynakca')
+@app.route('/kaynakca', methods=["POST", "GET"])
 def kaynakca():
     return render_template('page4.html')
 
-@app.route('/ilginc-gercekler')
+@app.route('/ilginc-gercekler', methods=["POST", "GET"])
 def ilginc_gercekler():
     return render_template('page5.html')
 
-@app.route('/ilginc-su-hayvanlari')
+@app.route('/ilginc-su-hayvanlari', methods=["POST", "GET"])
 def ilginc_su_hayvanlari():
     return render_template('page6.html')
 
