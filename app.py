@@ -4,6 +4,8 @@ import os
 
 app = Flask(__name__)
 
+active_users = {}
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
