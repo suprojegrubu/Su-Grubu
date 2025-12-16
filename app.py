@@ -6,8 +6,8 @@ import os
 app = Flask(__name__)
 
 CORS(app, resources={
-    r"/stats": {"origins": ""},
-    r"/track-user": {"origins": ""}
+    r"/stats": {"origins": "*"},
+    r"/track-user": {"origins": "*"}
 })
 
 active_users = {}
