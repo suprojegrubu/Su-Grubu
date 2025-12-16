@@ -445,6 +445,9 @@ background: var(--nav-bg);
   
 <nav class="navbar">
   <img src="{{ url_for('static', filename='Favicon.png') }}" class="nav-logo" alt="Su Logosu/Favicon">
+  <div id="site-stats" style="color:white; font-size:14px;">
+  Şu anda sitede: <span id="onlineCount">0</span> kişi
+  </div>
   <div class="nav-links">
     <a href="#" id="openVideoBtn">Video</a>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-mcaaHfzqC5UPbGjzMz0C7v7CHU9Qx1w8emhHqgNwNbpHtg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Anket</a>
@@ -737,6 +740,22 @@ document.addEventListener("DOMContentLoaded", () => {
     container.appendChild(d);
   }
 });
+function trackUser() {
+  fetch("/track-user");
+}
+
+function fetchStats() {
+  fetch("/stats")
+    .then(r => r.json())
+    .then(d => {
+      document.getElementById("onlineCount").innerText = d.online;
+    });
+}
+
+trackUser();
+setInterval(trackUser, 15000); 
+fetchStats();
+setInterval(fetchStats, 5000);
 </script>
 
 
