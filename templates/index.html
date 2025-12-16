@@ -454,6 +454,7 @@ background: var(--nav-bg);
   <div id="site-stats" class="value">
   Aktif Ziyaretçi Sayısı: <span id="onlineCount">0</span> kişi
   </div>
+  <div class="value">Farklı Ziyaretçiler: <span id="uniqueCount">0</span> kişi </div>
   <div class="nav-links">
     <a href="#" id="openVideoBtn">Video</a>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-mcaaHfzqC5UPbGjzMz0C7v7CHU9Qx1w8emhHqgNwNbpHtg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Anket</a>
@@ -693,7 +694,7 @@ function getUserId() {
 const USER_ID = getUserId();
 
 function heartbeat() {
-  fetch("https://hayatkaynagisu.onrender.com/track-user", {
+  fetch("/track-user", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ id: USER_ID })
@@ -701,19 +702,25 @@ function heartbeat() {
 }
 
 function fetchStats() {
-  fetch("https://hayatkaynagisu.onrender.com/stats")
+  fetch("/stats")
     .then(r => r.json())
     .then(d => {
-      document.getElementById("onlineCount").innerText = d.online;
+      const onlineEl = document.getElementById("onlineCount");
+      const uniqueEl = document.getElementById("uniqueCount");
+
+      if (onlineEl) onlineEl.textContent = d.online;
+      if (uniqueEl) uniqueEl.textContent = d.unique;
     })
     .catch(() => {});
 }
 
 heartbeat();
-setInterval(heartbeat, 5000);
 fetchStats();
-setInterval(fetchStats, 2000);
+
+setInterval(heartbeat, 2000);   
+setInterval(fetchStats, 2000);  
 </script>
+
  
 <script>
 (function() {
