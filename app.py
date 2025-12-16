@@ -1,34 +1,28 @@
 from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
-import time
-import os
+import time, os
 
 app = Flask(__name__)
-
-CORS(app, resources={
-    r"/stats": {"origins": "*"},
-    r"/track-user": {"origins": "*"}
-})
+CORS(app)
 
 active_users = {}
 
-def get_real_ip():
-    return request.headers.get("X-Forwarded-For", request.remote_addr)
-
-
-@app.route("/track-user")
+@app.route("/track-user", methods=["POST"])
 def track_user():
-    ip = get_real_ip()
-    active_users[ip] = time.time()
+    data = request.get_json()
+    uid = data.get("id")
+    if uid:
+        active_users[uid] = time.time()
     return "", 204
-
 
 @app.route("/stats")
 def stats():
     now = time.time()
-    for ip in list(active_users.keys()):
-        if now - active_users[ip] > 20:
-            del active_users[ip]
+    TIMEOUT = 5
+    
+    for uid in list(active_users.keys()):
+        if now - active_users[uid] > TIMEOUT:
+            del active_users[uid]
 
     return jsonify({"online": len(active_users)})
 
