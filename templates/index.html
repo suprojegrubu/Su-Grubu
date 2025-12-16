@@ -741,11 +741,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 function trackUser() {
-  fetch("/track-user");
+  fetch("https://hayatkaynagisu.onrender.com/track-user");
 }
 
 function fetchStats() {
-  fetch("/stats")
+  fetch("https://hayatkaynagisu.onrender.com/stats")
     .then(r => r.json())
     .then(d => {
       document.getElementById("onlineCount").innerText = d.online;
