@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
+import time
 import os
 
 app = Flask(__name__)
@@ -26,6 +27,25 @@ def ilginc_gercekler():
 @app.route('/ilginc-su-hayvanlari', methods=['POST', 'GET'])
 def ilginc_su_hayvanlari():
     return render_template('page6.html')
+
+@app.route("/track-user")
+def track_user():
+    ip = request.remote_addr
+    active_users[ip] = time.time()
+    return "", 204
+
+
+@app.route("/stats")
+def stats():
+    now = time.time()
+
+    for ip in list(active_users.keys()):
+        if now - active_users[ip] > 30:
+            del active_users[ip]
+
+    return jsonify({
+        "online": len(active_users)
+    })
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
