@@ -681,7 +681,41 @@ background: var(--nav-bg);
   header('Access-Control-Allow-Methods: GET,HEAD,OPTIONS,POST,PUT');
   header("Access-Control-Allow-Headers: Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
   ?>
-  
+
+<script>
+function getUserId() {
+  let id = localStorage.getItem("uid");
+  if (!id) {
+    id = crypto.randomUUID();
+    localStorage.setItem("uid", id);
+  }
+  return id;
+}
+
+const USER_ID = getUserId();
+
+function heartbeat() {
+  fetch("https://hayatkaynagisu.onrender.com/track-user", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id: USER_ID })
+  });
+}
+
+function fetchStats() {
+  fetch("https://hayatkaynagisu.onrender.com/stats")
+    .then(r => r.json())
+    .then(d => {
+      document.getElementById("onlineCount").innerText = d.online;
+    });
+}
+
+heartbeat();
+setInterval(heartbeat, 5000);
+fetchStats();
+setInterval(fetchStats, 2000);
+</script>
+ 
 <script>
 (function() {
   const savedTheme = localStorage.getItem("theme");
@@ -747,22 +781,6 @@ document.addEventListener("DOMContentLoaded", () => {
     container.appendChild(d);
   }
 });
-function trackUser() {
-  fetch("https://hayatkaynagisu.onrender.com/track-user");
-}
-
-function fetchStats() {
-  fetch("https://hayatkaynagisu.onrender.com/stats")
-    .then(r => r.json())
-    .then(d => {
-      document.getElementById("onlineCount").innerText = d.online;
-    });
-}
-
-trackUser();
-setInterval(trackUser, 5000); 
-fetchStats();
-setInterval(fetchStats, 2500);
 </script>
 
 
