@@ -439,13 +439,6 @@ background: var(--nav-bg);
 }
     
  </style>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F59Z4HVCQL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-F59Z4HVCQL');
-</script>
 </head>
 <body>
   
@@ -454,7 +447,7 @@ background: var(--nav-bg);
   <div id="site-stats" class="value">
   Aktif Ziyaretçi Sayısı: <span id="onlineCount">0</span> kişi
   </div>
-  <div class="value">Farklı Ziyaretçiler: <span id="uniqueCount">0</span> kişi </div>
+  <div class="value">Toplam Ziyaretçiler: {{ total }} kişi </div>
   <div class="nav-links">
     <a href="#" id="openVideoBtn">Video</a>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-mcaaHfzqC5UPbGjzMz0C7v7CHU9Qx1w8emhHqgNwNbpHtg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Anket</a>
@@ -701,16 +694,15 @@ function heartbeat() {
   }).catch(() => {});
 }
 
-
 function fetchStats() {
   fetch("/stats")
     .then(r => r.json())
     .then(d => {
       document.getElementById("onlineCount").textContent = d.online;
-      document.getElementById("uniqueCount").textContent = d.unique;
     })
     .catch(() => {});
 }
+
 
 heartbeat();
 fetchStats();
