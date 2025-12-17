@@ -8,7 +8,7 @@ CORS(app)
 active_users = {}
 TIMEOUT = 5
 
-@app.route("/track-user", methods=["POST"])
+@app.route("/track-user", methods=["POST", "GET"])
 def track_user():
     data = request.get_json()
     uid = data.get("id")
@@ -17,7 +17,7 @@ def track_user():
     return "", 204
 
 
-@app.route("/stats")
+@app.route("/stats", methods=["POST", "GET"])
 def stats():
     now = time.time()
 
@@ -67,28 +67,28 @@ def increment_total_visits():
 
     return new_value
 
-@app.route("/")
+@app.route("/", methods=["POST", "GET"])
 def index():
     total_visits = increment_total_visits()
     return render_template("index.html", total=total_visits)
 
-@app.route("/siir")
+@app.route("/siir", methods=["POST", "GET"])
 def siir():
     return render_template("page2.html")
 
-@app.route("/hikaye")
+@app.route("/hikaye", methods=["POST", "GET"])
 def hikaye():
     return render_template("page3.html")
 
-@app.route("/kaynakca")
+@app.route("/kaynakca", methods=["POST", "GET"])
 def kaynakca():
     return render_template("page4.html")
 
-@app.route("/ilginc-gercekler")
+@app.route("/ilginc-gercekler", methods=["POST", "GET"])
 def ilginc_gercekler():
     return render_template("page5.html")
 
-@app.route("/ilginc-su-hayvanlari")
+@app.route("/ilginc-su-hayvanlari", methods=["POST", "GET"])
 def ilginc_su_hayvanlari():
     return render_template("page6.html")
 
