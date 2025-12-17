@@ -44,7 +44,7 @@ def increment_total_visits():
     
     r = requests.get(url, headers=HEADERS)
     if r.status_code != 200:
-    return 0
+        return 0
 
     sha = data["sha"]
     current = int(
