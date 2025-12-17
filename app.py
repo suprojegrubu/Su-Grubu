@@ -8,26 +8,23 @@ CORS(app)
 active_users = {}
 TIMEOUT = 5
 
-@app.route("/track-user", methods=["POST", "GET"])
+@app.route("/track-user", methods=["POST"])
 def track_user():
-    data = request.get_json()
+    data = request.get_json(silent=True) or {}
     uid = data.get("id")
     if uid:
         active_users[uid] = time.time()
     return "", 204
 
 
-@app.route("/stats", methods=["POST", "GET"])
+@app.route("/stats", methods=["GET"])
 def stats():
     now = time.time()
-
     for uid in list(active_users.keys()):
         if now - active_users[uid] > TIMEOUT:
             del active_users[uid]
+    return jsonify({"online": len(active_users)})
 
-    return jsonify({
-        "online": len(active_users)
-    })
 
 GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
 REPO = "suprojegrubu/Su-Grubu"
@@ -44,6 +41,10 @@ def increment_total_visits():
 
     r = requests.get(url, headers=HEADERS)
     data = r.json()
+    
+    r = requests.get(url, headers=HEADERS)
+    if r.status_code != 200:
+    return 0
 
     sha = data["sha"]
     current = int(
