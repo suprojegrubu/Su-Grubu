@@ -93,6 +93,9 @@ def ilginc_gercekler():
 def ilginc_su_hayvanlari():
     return render_template("page6.html")
 
+@app.route("/oyun", methods=["POST", "GET"])
+def oyun():
+    return render_template("suprojeoyunu.html")
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
